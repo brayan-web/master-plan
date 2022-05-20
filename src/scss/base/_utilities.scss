@@ -1,0 +1,40 @@
+.reset__padding{
+    padding: 0;
+    margin: 0;
+}
+
+.center-text{
+    text-align: center;
+}
+
+.line_horizontal{
+    width: 95%;
+    margin: auto;
+    height: 1px;
+    background-color: $--black-color;
+}
+.line__vertical{
+    width: 1px;
+    height: 100%;
+    background-color: $--black-color;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    @include device-medium {
+        display: none;
+    }
+}
+.u__padding{
+    padding:5rem 1rem 5rem 1rem;
+    @include lg-device {
+        padding:3rem 1rem 3rem 1rem;
+
+    }
+}
+.u__padding--title{
+    padding:0 0 2rem 0;
+    @include lg-device {
+        padding:0 0 1rem 0;
+
+    }
+}

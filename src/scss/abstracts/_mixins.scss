@@ -1,0 +1,24 @@
+@mixin device-medium {
+    @media (max-width: 1200px) { @content }
+  }
+@mixin device-medium-min {
+  @media (min-width: 1200px) { @content }
+}
+@mixin lg-device{
+  @media (max-width: 991px) { @content }
+}
+
+@mixin md-device{
+  @media (max-width: 767px) { @content }
+}
+@mixin sm-device{
+  @media (max-width: 575px) { @content }
+}
+@mixin extra-sm-device{
+  @media (max-width: 460px) { @content }
+}
+@mixin very-sm-device{
+  @media (max-width: 351px) { @content }
+}
+
+

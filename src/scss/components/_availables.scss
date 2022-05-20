@@ -1,0 +1,66 @@
+.availables{
+    width: 95%;
+    margin: auto;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+
+
+    @include device-medium {
+        justify-content: center;
+
+        
+    }
+  
+    &__count{
+        background-color: $--availables-color;
+        color: $--color-white;
+        border-radius: 50%;
+        width: 4rem;
+        height: 4rem;
+        font-size: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: $--font-weight-bold;
+        @include device-medium {
+        font-size: 2.2rem;
+        }
+        @include lg-device {
+            font-size: 1.8rem;
+            width: 3.7rem;
+            height: 3.7rem;
+        }
+    }
+    &__text{
+        margin-left: .9rem;
+        h2{
+            text-transform: uppercase;
+            font-size: 1.7rem;
+            color: $--black-color;
+            font-weight: 500;
+            @include lg-device {
+                font-size: 1.6rem;
+
+            }
+        }
+    }
+}
+
+.availables-desk{
+    @include device-medium {
+      display: none; 
+        }  
+}
+.availables-mobile{
+    display: none; 
+
+    @include device-medium {
+      display: flex; 
+    margin-bottom: 2rem;
+           
+        }  
+}

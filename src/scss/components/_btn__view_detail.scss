@@ -1,0 +1,31 @@
+
+//Botton ver plano a detalle
+.btn__view-plan {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+    border-radius: 0.5rem;
+    position: relative;
+    padding: .6rem 1.25rem;
+    margin: 2rem 0 2rem 0;
+    font-size: 1rem;
+    min-width: 150px;
+    background: $--primary-color;
+    color: $--color-white;
+    visibility: hidden;
+    @include device-medium {
+      display: inline-block;
+      visibility: visible;
+    }
+  }
+
+    &:hover{
+        color: $--color-white;
+    }
+
+
+}
+//Fin ver plano a detalle
+

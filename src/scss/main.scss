@@ -1,0 +1,38 @@
+@import './abstracts/variables';
+@import './abstracts/mixins';
+
+// @import './base/animation';
+@import './base/typography';
+@import './base/base';
+@import './base/utilities';
+
+@import './components/LineVertical';
+@import './components/select';
+@import './components/availables';
+@import './components/btn__view_detail';
+@import './components/tooltip';
+@import './components/buttons';
+@import './components/validation_error';
+@import './components/radio_button';
+
+@import './pages/map_filter';
+@import './pages/polygon';
+@import './pages/map_detail';
+@import './pages/status_location';
+@import './pages/grouping_location_data';
+@import './pages/detail_locations';
+@import './pages/amenities_location';
+@import './pages/formulario_locations';
+@import './pages/image_locations';
+@import './pages/reesume_quote';
+
+@import './layout/header';
+@import './layout/footer';
+@import './layout/subheader';
+
+
+
+
+
+
+  

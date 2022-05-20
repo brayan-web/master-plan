@@ -1,0 +1,57 @@
+.select__container{
+    width: 95%;
+    margin: auto;
+    position: relative;
+    &--title{
+        font-weight: $--font-weight-900;
+        font-size: 2.6rem;
+    }
+
+
+}
+.select__container select{
+
+    width:100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    padding: 7px 10px;
+    height: 38px;
+    outline: 0;
+    border: 0;
+    background: #f0f0f0;
+    color: $--black-color;
+    font-size: 1.7rem;
+    border:2px solid rgba(21,37,65,0.9);
+    border-radius: .8rem;
+    position: relative;
+    transition: all 0.25s ease;
+    @include lg-device {
+        font-size: 1.6rem;
+
+    }
+}
+.select__container select::-ms-expand {
+    display: none;
+}
+.select__container select:hover{
+    background: rgba(21,37,65, 0.9);
+    color: $--color-white;
+}
+.select__container .arrow{
+    position: absolute;
+    right: 20px;
+    top: calc(50% + 7px);
+    width: 25px;
+    height: 25px;
+    display: block;
+    color: $--primary-color;
+    transition: all 0.25s ease;
+}
+.select__container:hover .arrow{
+    color: $--color-white;
+
+}

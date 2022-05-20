@@ -1,0 +1,32 @@
+.map_filter{
+    display: flex; 
+    align-items: flex-start;
+    flex-direction: row;
+    width:95%; 
+    margin:auto; 
+    @include device-medium {
+        flex-direction: column-reverse
+        
+    }
+}
+
+.maphighlight__box{ 
+    flex: 70%;
+    border-right: 1px solid $--black-color;
+    opacity: 0.6px;
+    @include device-medium {
+    border-right: none; 
+    width: 100%;      
+    }
+
+}
+.select__box{
+    flex: 30%;
+    @include device-medium {
+        border-right: none; 
+        width: 100%;   
+        padding: 3rem 0 3rem 0;  
+        }
+       
+}
+

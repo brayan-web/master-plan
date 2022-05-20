@@ -1,0 +1,60 @@
+.map__detail {
+  width: 100%;
+  transition: all ease 0.2s;
+  height: 100vh;
+  position: relative;
+  background: $--background-color;
+  overflow: hidden;
+  overflow-x: scroll;
+  overflow-y: scroll;
+
+  &-svg {
+    width: 300%;
+   
+  }
+}
+
+.btn__navigation {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: $--primary-color;
+  svg {
+    font-size: 1.7rem;
+    color: $--color-white;
+  }
+
+  &--close {
+    right: .5rem;
+    top: .5rem;
+    cursor:pointer;
+  }
+  &--up {
+    left: 50%;
+    top: 0rem;
+
+    transform: translate(-50%, 0);
+  }
+  &--down {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  &--left {
+    bottom: 50%;
+    transform: translate(0, -50%);
+  }
+  &--right {
+    right: 0;
+    bottom: 50%;
+    transform: translate(0, -50%);
+  }
+}
+::-webkit-scrollbar {
+  display: none;
+}
