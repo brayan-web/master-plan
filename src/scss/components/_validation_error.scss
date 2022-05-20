@@ -1,0 +1,65 @@
+.validation__error-box{
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+  left: 3rem;
+  width: 100%;
+
+  height: 5%;
+    span{
+      color: $--error-color;
+      font-size: 1.2rem;
+      font-weight: $--font-weight-700;
+    }
+}
+.icon__error-input{
+  position: absolute;
+  right:2rem;
+  top: 1.2rem;
+  font-size: 1.5rem;
+  color: $--error-color;
+  transition: all 0.25s ease;
+}
+.icon__success-input{
+  position: absolute;
+  right:2rem;
+  top: 1.2rem;
+  font-size: 1.5rem;
+  color: $--primary-color;
+  transition: all 0.25s ease;
+}
+.form .invalid__input{
+  border: 2px solid $--error-color;
+  &:hover {
+    border: 2px solid $--error-color;
+
+  }
+
+  &:focus {
+    border: 2px solid $--error-color;
+
+  }
+}
+.form .invalid__label{
+  color:  #dc3545;
+
+
+}
+
+@keyframes shakeno{
+  0%{
+    margin-left: 5px;
+  }
+  25%{
+    margin-left: 10px;
+  }
+  50%{
+    margin-left: 8px;
+  }
+  75%{
+    margin-left: 10px;
+  }
+  100%{
+    margin-left: 5px;
+  }
+}

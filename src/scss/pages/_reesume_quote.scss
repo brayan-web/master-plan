@@ -1,0 +1,22 @@
+.resume__quote-content{
+  width: 90%;
+  margin: auto;
+}
+
+.resume__quote-subtitle{
+  font-size: $--subtitle-font-size;
+  font-weight: $--font-weight-700;
+
+@include lg-device {
+  font-size: $--subtitle-font-size-lg;
+}
+@include md-device {
+  font-size: $--subtitle-font-size-md;
+}
+@include sm-device {
+  font-size: $--subtitle-font-size-sm;
+}
+@include extra-sm-device {
+  font-size: $--subtitle-font-size-ex-sm;
+}
+}

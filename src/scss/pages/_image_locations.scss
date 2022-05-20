@@ -1,0 +1,87 @@
+.image__location--box{
+  width: 100%;
+  position: relative;
+}
+.image__container{
+  width: 80%;
+  margin: auto;
+
+
+}
+.image__container .image__location{
+  width: 100%;
+  cursor: pointer;
+}
+.icon__glass-container{
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background: $--primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  left: 1.2rem;
+  @include lg-device {
+
+  }
+  @include md-device {
+
+  }
+  @include sm-device {
+
+  }
+  @include extra-sm-device {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+.icon__glass-container .icon__glass{
+  color: $--color-white;
+  font-size: 1.7rem;
+  @include extra-sm-device {
+    font-size: 1.3rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.image__location--box .loading__box{
+
+
+
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: 1s all;
+  opacity: 0;
+}
+.loading.show {
+  opacity: 1;
+}
+.loading .spin {
+  border: 5px solid hsla(218, 51%, 17%, 0.2);
+  border-top-color: $--primary-color;
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+

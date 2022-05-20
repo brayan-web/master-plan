@@ -1,0 +1,56 @@
+.amenities__location--box{
+  width: 100%;
+
+}
+.amenities__title{
+  font-size: $--title-font-size;
+  font-weight: $--font-weight-900;
+  @include lg-device {
+    font-size: $--title-font-size-lg;
+  }
+  @include md-device {
+    font-size: $--title-font-size-md;
+  }
+  @include sm-device {
+    font-size: $--title-font-size-sm;
+  }
+  @include extra-sm-device {
+    font-size: $--title-font-size-ex-sm;
+  }
+}
+.amenities__content{
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: auto auto;
+
+
+}
+
+
+
+.flexContainer {
+  display: flex;
+  align-items:center;
+  padding: 1rem 0 1rem 0;
+
+
+}
+
+
+.customSpan {
+  margin:0 0 0px 4px;
+  font-size: 1.3rem;
+
+  @include extra-sm-device {
+    font-size: 1.2rem;
+  }
+
+}
+.customIcon img{
+  width: 2rem;
+  height:2rem;
+  display: block;
+
+
+
+}

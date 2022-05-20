@@ -1,6 +1,46 @@
 .detail__location--box{
     width:100%;
+
 }
-.detail__location--title{
-  font-size:2.6rem;
+.detail__title{
+  font-size: $--title-font-size;
+  font-weight: $--font-weight-900;
+  @include lg-device {
+    font-size: $--title-font-size-lg;
+  }
+  @include md-device {
+    font-size: $--title-font-size-md;
+  }
+  @include sm-device {
+    font-size: $--title-font-size-sm;
+  }
+  @include extra-sm-device {
+    font-size: $--title-font-size-ex-sm;
+  }
+}
+.detail__content{
+  width:100%;
+  padding:0;
+  font-size:$--p-font-size;
+  line-height:2.5rem;
+  @include lg-device {
+    font-size: $--p-font-size-lg;
+  }
+  @include md-device {
+    font-size: $--p-font-size-md;
+  }
+  @include sm-device {
+    font-size: $--p-font-size-sm;
+  }
+  @include extra-sm-device {
+    font-size: $--p-font-size-ex-sm;
+  }
+  p{
+    font-weight: $--font-weight-700;
+  }
+  span{
+    font-weight: $--font-weight-500;
+    opacity: 1;
+
+  }
 }
