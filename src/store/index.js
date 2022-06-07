@@ -6,7 +6,7 @@ const apiUrl = "https://gn3bbxdche.execute-api.us-west-2.amazonaws.com/Productio
 const apiDev = "https://gn3bbxdche.execute-api.us-west-2.amazonaws.com/sandbox/api"
 
 import developmentModule from "./development";
-
+import financialModuel from "./financial"
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -31,5 +31,6 @@ export default new Vuex.Store({
   },
   modules: {
     development: developmentModule,
+    financial: financialModuel
   }
 })

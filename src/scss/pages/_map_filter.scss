@@ -13,7 +13,6 @@
 .maphighlight__box{ 
     flex: 70%;
     border-right: 1px solid $--black-color;
-    opacity: 0.6px;
     @include device-medium {
     border-right: none; 
     width: 100%;      
@@ -28,5 +27,13 @@
         padding: 3rem 0 3rem 0;  
         }
        
+}
+
+.box__svg{
+    width: 95%;
+    margin: auto;
+    svg{
+        width: 100%;
+    }
 }
 

@@ -1,7 +1,7 @@
 @import './abstracts/variables';
 @import './abstracts/mixins';
 
-// @import './base/animation';
+@import './base/animation';
 @import './base/typography';
 @import './base/base';
 @import './base/utilities';
@@ -9,11 +9,15 @@
 @import './components/LineVertical';
 @import './components/select';
 @import './components/availables';
+@import './components/availables_privates';
 @import './components/btn__view_detail';
 @import './components/tooltip';
+@import './components/tooltip_map_main';
 @import './components/buttons';
 @import './components/validation_error';
 @import './components/radio_button';
+@import './components/loader';
+@import './components/indicators';
 
 @import './pages/map_filter';
 @import './pages/polygon';
@@ -25,6 +29,7 @@
 @import './pages/formulario_locations';
 @import './pages/image_locations';
 @import './pages/reesume_quote';
+@import './pages/svg_imahe_home';
 
 @import './layout/header';
 @import './layout/footer';

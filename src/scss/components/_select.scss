@@ -1,10 +1,24 @@
 .select__container{
-    width: 95%;
+    width: 85%;
     margin: auto;
     position: relative;
     &--title{
         font-weight: $--font-weight-900;
-        font-size: 2.6rem;
+        font-size: $--title-font-size;
+
+        @include lg-device {
+            font-size: $--title-font-size-lg;
+        }
+        @include md-device {
+            font-size: $--title-font-size-md;
+        }
+        @include sm-device {
+            font-size: $--title-font-size-sm;
+        }
+        @include extra-sm-device {
+            line-height: 2.5rem;
+            font-size: $--title-font-size-ex-sm;
+        }
     }
 
 
@@ -31,7 +45,9 @@
     transition: all 0.25s ease;
     @include lg-device {
         font-size: 1.6rem;
-
+    }
+    @include extra-sm-device {
+        margin-top: 1rem;
     }
 }
 .select__container select::-ms-expand {
@@ -44,14 +60,18 @@
 .select__container .arrow{
     position: absolute;
     right: 20px;
-    top: calc(50% + 7px);
+    top: calc(50% + 15px);
     width: 25px;
     height: 25px;
     display: block;
     color: $--primary-color;
     transition: all 0.25s ease;
+    @include extra-sm-device {
+        top: calc(50% + 15px);
+        right: 13px;
+    }
 }
-.select__container:hover .arrow{
+.select__container select:hover ~ .arrow{
     color: $--color-white;
 
 }

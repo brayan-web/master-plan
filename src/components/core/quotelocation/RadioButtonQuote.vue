@@ -23,7 +23,7 @@
     },
     methods: {
       updateActivePlan(){
-        this.$emit('onUpdatePlan', this.value)
+        this.$emit('onUpdatePlan', this.value, this.interes)
       }
     }
   }

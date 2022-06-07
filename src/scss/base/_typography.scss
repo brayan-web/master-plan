@@ -10,3 +10,19 @@ h1{
   font-size: $--title-font-size;
   font-weight:900;
 }
+.swal2-title, .swal2-html-container{
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  @include lg-device {
+    font-size: $--p-font-size-lg;
+  }
+  @include md-device {
+    font-size: $--p-font-size-md;
+  }
+  @include sm-device {
+    font-size: $--p-font-size-sm;
+  }
+  @include extra-sm-device {
+    font-size: $--p-font-size-ex-sm;
+  }
+}

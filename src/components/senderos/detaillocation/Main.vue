@@ -6,8 +6,9 @@
     </div>
     <main class="main__box" :class="columnReverse">
       <div class="item1 item">
+        <div :class="showLineHorizontal"  class="line_horizontal-quote"></div>
         <detail-location/>
-        <div class="line_horizontal"></div>
+        <div :class="hideLineHorizontal" class="line_horizontal"></div>
         <div v-if="stateForm == 2">
           <amenities-location/>
           <div class="buttons__box">
@@ -17,15 +18,11 @@
         </div>
         <div v-else>
           <image-location class="image__location-small"  />
-
         </div>
       </div>
       <div class="item2 item">
-
-
-
         <image-location v-if="stateForm == 2"/>
-        <form-quote v-else :stateForm="stateForm" @click="hiddeRecibirInfo"/>
+        <form-quote  v-else :stateForm="stateForm" @click="hiddeRecibirInfo"/>
       </div>
     </main>
   </div>
@@ -43,7 +40,7 @@ export default {
   name: "Main",
   data() {
     return{
-      //estado 2 es la imagen 1 el cotizador y 0 recibir info
+      //estado 2 es la imagen, 1 el cotizador y 0 recibir info
       stateForm: 2,
       closeIcon: faXmark,
         deviceWidth: 0
@@ -66,10 +63,24 @@ export default {
         }
       }else {
         return 'main__box'
-
       }
     return 'main__box'
-
+    },
+    hideLineHorizontal(){
+      if(this.deviceWidth <= 1200){
+        if (this.stateForm == 1 || this.stateForm == 0){
+          return 'hide__line'
+        }
+      }
+      return ''
+    },
+    showLineHorizontal(){
+      if(this.deviceWidth <= 1200){
+        if (this.stateForm == 1 || this.stateForm == 0){
+          return 'show__line'
+        }
+      }
+      return ''
     }
   },
   methods: {
@@ -87,11 +98,10 @@ export default {
     },
     getWidthWindow() {
       this.deviceWidth = window.innerWidth;
-
-    }
+    },
   },
   mounted() {
-    this.columnReverse
+    this.columnReverse;
   },
   created(){
     this.deviceWidth = innerWidth;

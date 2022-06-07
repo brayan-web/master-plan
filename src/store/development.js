@@ -1,6 +1,7 @@
 
 
 const LOCATIONS_URL = "/locations";
+const TOWER_STAGE_LEVELS_URL = "/towerStageLevels"
 
 export default {
   state: {
@@ -23,7 +24,6 @@ export default {
       state.urlImageLocation = urlImageLocation;
 
     },
-
     _setLoading(state, stateLoading){
         state.loading = stateLoading
     }
@@ -39,7 +39,6 @@ export default {
     getUrlImageLocation: (state) => {
       return state.urlImageLocation
     },
-
     getStatusLoading: (state) => {
       return state.loading
     }
@@ -90,6 +89,42 @@ export default {
       } catch (e) {
         console.log(e);
       }
+    },
+    async getTowerStageLevels(context, development){
+      let AVAILABLE_TOWERS_URL = `${TOWER_STAGE_LEVELS_URL}/${development.id}`;
+      if(development.level > 0){
+        AVAILABLE_TOWERS_URL += `?towerStageLevelId=${development.level}`
+      }
+      let response = await context.rootGetters.api.get(`${AVAILABLE_TOWERS_URL}`);
+      let arr = [];
+      for (let i = 0; i < response.data.length; i++) {
+        let obj = {};
+        let response_obj = response.data[i];
+        obj.id = response_obj.id;
+        obj.type = response_obj.prototypeName;
+        obj.name = response_obj.description;
+        obj.coords = response_obj.coordinates;
+        obj.reserved = response_obj.reserved;
+        obj.type = response_obj.prototypeName;
+        obj.unavailable = response_obj.unavailable;
+        obj.shape = 'poly';
+        obj.m2t = response_obj.m2t;
+        obj.available = response_obj.available;
+        if (response_obj.available == 0) {
+          if (response_obj.reserved == 0) {
+            obj.color = 'B00000';
+            obj.status = 0;
+          } else {
+            obj.color = 'FAF142';
+          }
+          obj.color = 'CB3234';
+        } else {
+          obj.color = '31af67';
+
+        }
+        arr.push(obj);
+      }
+      context.commit("_setLocations",arr);
     },
 
    async getAvailableImageLocation(context, development){

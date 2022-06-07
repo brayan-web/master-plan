@@ -13,6 +13,13 @@
     height: 1px;
     background-color: $--black-color;
 }
+.line_horizontal-quote{
+    width: 95%;
+    margin: auto;
+    display: none;
+    height: 1px;
+    background-color: $--black-color;
+}
 .line__vertical{
     width: 1px;
     height: 100%;
@@ -36,5 +43,13 @@
     @include lg-device {
         padding:0 0 1rem 0;
 
+    }
+}
+@include device-medium{
+    .u__dipslay--none{
+        display:none;
+    }
+    .u__dipslay--block{
+        display:block;
     }
 }

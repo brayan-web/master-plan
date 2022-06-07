@@ -3,6 +3,9 @@ import VueRouter from 'vue-router'
 
 import Home from "../components/home/Home"
 
+//CANADAS CASAS ROUTES
+import CanadasCasas from '../components/canadas/casas/CanadasCasas';
+import MenuCanadasCasas from '../components/canadas/casas/Menu';
 
 //LINDA VISTA ROUTES
 import Lindavista from '../components/lindavista/Lindavista';
@@ -28,6 +31,20 @@ const routes = [
   {
     path: '/',
     component: Home
+  },
+  {
+    path: '/canadas_casas',
+    component: CanadasCasas,
+    children: [
+      {
+        path: '/',
+        component: MenuCanadasCasas
+      },
+      {
+        path: '/canadas_casas/:nombre_nivel_te/:cve_nivel_te',
+        component: MenuCanadasCasas
+      },
+    ]
   },
   {
     path: '/lindavista',

@@ -1,0 +1,88 @@
+.availables__privates-box{
+  margin:auto;
+  width: 85%;
+
+  @include device-medium {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  @include lg-device {
+    width: 100%;
+    text-align: center;
+
+  }
+  @include md-device {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    text-align: center;
+  }
+}
+.availables__privates{
+  width: 100%;
+  margin: auto;
+  text-align: left;
+  padding: 2rem 0rem 2rem 0rem;
+
+  &-title{
+    font-weight: $--font-weight-700;
+    font-size: $--subtitle-font-size-sm;
+    @include lg-device {
+      font-size: 1.6rem;
+    }
+    @include sm-device{
+      font-size: 1.5rem;
+
+    }
+  }
+  &-subtitle{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 1.3rem;
+    @include lg-device {
+      margin-left: 0rem;
+      justify-content: center;
+
+    }
+    .count{
+      background-color: $--availables-color;
+      color: $--color-white;
+      border-radius: 50%;
+      width: 3.5rem;
+      height: 3.5rem;
+      line-height: 3.5rem;
+      font-size: 1.9rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-weight: $--font-weight-bold;
+
+      @include lg-device {
+        width: 3rem;
+        height: 3rem;
+        line-height: 3rem;
+      }
+      @include sm-device{
+        font-size: 1.7rem;
+      }
+    }
+    .text{
+      margin-left: .9rem;
+        h2{
+          font-weight: $--font-weight-600;
+          font-size: $--subtitle-font-size-ex-sm;
+          @include lg-device {
+            font-size: 1.4rem;
+          }
+          @include sm-device{
+            font-size: 1.4rem;
+
+          }
+        }
+    }
+  }
+}

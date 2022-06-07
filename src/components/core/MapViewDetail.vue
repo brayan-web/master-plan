@@ -16,11 +16,13 @@
         :width="`${width}`"
         :height="`${height}`"
         :xlink:href="`${url}`"
+        :transform="_transform"
+
       ></image>
       <polygon
         class="polygon"
         @click="selectLocation(location)"
-        v-for="(location, index) in locations"
+        v-for="(location, index) in filterMapAvaialbles"
         :key="index"
         :points="location.coords"
         :shape="location.shape"
@@ -74,6 +76,7 @@ export default {
       url: "",
       opacity: 0.4,
       stroke: 3,
+      transform: false
     };
   },
   components: {
@@ -86,11 +89,25 @@ export default {
     development() {
       return { id: this.id, level: 0 };
     },
+    _transform(){
+      if(this.transform){
+        return 'matrix(1 0 0 1 238 -0.42)'
+      }else{
+        return ''
+      }
+    },
+    filterMapAvaialbles(){
+      if(this.desarrollo === 'canadas_casas'){
+        return this.locations.filter((location) => location.available > 0)
+      }else{
+        return this.locations;
+      }
+    }
   },
   methods: {
-    ...mapActions(["getAvailableLocations", "selectedLocation"]),
+    ...mapActions(["getAvailableLocations", "getTowerStageLevels", "selectedLocation"]),
     selectLocation(location) {
-      if (location.status == 2) {
+      if (location.status == 2 || location.available > 0) {
         this.selectedLocation(location);
         this.$router.push(`/${this.desarrollo}/${location.name}`);
       } else {
@@ -101,12 +118,17 @@ export default {
       this.$router.go(-1);
     },
     customPolygon(index) {
-      let location = this.locations[index];
+      let location = this.filterMapAvaialbles[index];
       return `stroke-width:3; stroke:#${location.color}; opacity: ${this.opacity}; fill: #${location.color}`;
     },
   },
   async created() {
-    await this.getAvailableLocations(this.development);
+    if(this.desarrollo === "canadas_casas"){
+      await  this.getTowerStageLevels(this.development);
+      this.transform = true;
+    }else{
+      await this.getAvailableLocations(this.development);
+    }
     this.url = this.$route.params.url;
     this.width = this.$route.params.width;
     this.height = this.$route.params.height;

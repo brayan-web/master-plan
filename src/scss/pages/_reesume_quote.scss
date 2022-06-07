@@ -7,7 +7,7 @@
   font-size: $--subtitle-font-size;
   font-weight: $--font-weight-700;
 
-@include lg-device {
+  @include lg-device {
   font-size: $--subtitle-font-size-lg;
 }
 @include md-device {
@@ -19,4 +19,64 @@
 @include extra-sm-device {
   font-size: $--subtitle-font-size-ex-sm;
 }
+}
+
+.content__resume{
+  width:100%;
+  margin: 2rem 0 2rem 0;
+  font-size:$--p-font-size;
+  line-height:3.5rem;
+  text-align: left;
+  @include lg-device {
+    font-size: $--p-font-size-lg;
+  }
+  @include md-device {
+    font-size: $--p-font-size-md;
+  }
+  @include sm-device {
+    font-size: $--p-font-size-sm;
+  }
+  @include extra-sm-device {
+    font-size: $--p-font-size-ex-sm;
+  }
+  &-subtitle{
+    font-size: $--subtitle-font-size;
+    font-weight: $--font-weight-700;
+    margin: 0rem 0rem 1rem 0rem;
+    @include lg-device {
+      font-size: $--p-font-size-lg;
+    }
+    @include md-device {
+      font-size: $--p-font-size-md;
+    }
+    @include sm-device {
+      font-size: $--p-font-size-sm;
+    }
+    @include extra-sm-device {
+      font-size: $--p-font-size-ex-sm;
+    }
+  }
+
+  p{
+    font-weight: $--font-weight-700;
+  }
+  span{
+    font-weight: $--font-weight-500;
+    opacity: 1;
+
+  }
+  .consulta{
+    text-align:center;
+    font-size: $--p-font-size-sm;
+  }
+}
+.btn__box{
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  @include sm-device {
+    justify-content: space-between;
+  }
 }

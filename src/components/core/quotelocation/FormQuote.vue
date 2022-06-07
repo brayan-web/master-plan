@@ -2,7 +2,7 @@
   <div class="form__location--box u__padding">
     <h1 class="form__title">{{ (stateForm == 0 ? 'FORMULARIO PARA INFORMACIÓN' : 'Cotizar') }}</h1>
     <p class="form__ubication">Ubicaciòn: <span>{{ selected.name }}</span></p>
-    <div class="form__content-inputs" v-if="stepper">
+    <div class="form__content-inputs" v-if="stepper == 1">
       <h2 class="form__subtitle">Datos personales</h2>
       <div class="form">
         <input v-model="name" type="text" id="name" class="form__input" autocomplete="off" :class="{'invalid__input':  $v.name.$error}" placeholder=" ">
@@ -39,14 +39,14 @@
         <validation-error  message="Introduzca su codigo postal" type="required" :validation="$v.cp"/>
         <label for="cp" class="form__label" :class="{'invalid__label':  $v.cp.$error}">Codigo postal</label>
       </div>
+      <div class="btn_box">
+        <a href="" @click.prevent="next()" class="btn btn__enviar">{{ (stateForm == 0 ? 'enviar' : 'siguiente') }}</a>
+      </div>
+      <div class="btn_box">
+        <a href="" @click.prevent="hiddeRecibirInfo" class="btn btn__cancel">cancelar</a>
+      </div>
     </div>
-    <resume-quote v-else/>
-    <div class="btn_box">
-      <a href="" @click.prevent="next()" class="btn btn__enviar">{{ (stateForm == 0 ? 'enviar' : 'siguiente') }}</a>
-    </div>
-    <div class="btn_box">
-      <a href="" @click.prevent="hiddeRecibirInfo" class="btn btn__cancel">cancelar</a>
-    </div>
+    <resume-quote @send-message="handleSendMessage" :user="user"  @onUpdateStepper="updateStepper" v-if="stepper == 2"/>
   </div>
 </template>
 <script>
@@ -67,15 +67,16 @@ export default {
   data() {
     return {
       formQuote: 2,
-      name: "",
-      lastName: "",
-      email: "",
-      telephone: "",
-      cp: "",
+      name: "Brayan",
+      lastName: "Sandoval",
+      email: "brayan@gmail.com",
+      telephone: "7861127450",
+      cp: "61110",
       subbmited: false,
       errorInput: faCircleExclamation,
       successInput: faCheck,
-      stepper: false
+      stepper: 1,
+      user: []
     }
   },
   props: ["stateForm"],
@@ -86,7 +87,6 @@ export default {
     state() {
       return this.formQuote;
     },
-
   },
   methods: {
     hiddeRecibirInfo() {
@@ -95,11 +95,36 @@ export default {
     next() {
       this.$v.$touch();
       if (!this.$v.$invalid) {
-        console.log("validado")
+        if(this.stateForm == 0){
+          console.log("diste click en enviar")
+        }else{
+          this.stepper += 1;
+          let users = {
+            name: this.name,
+            lastName: this.lastName,
+            email: this.email,
+            telephone: this.telephone,
+            cp: this.cp,
+          }
+          this.user.push(users)
+        }
+
       } else {
         console.log("no validado")
       }
+    },
+    sendMoreInfoMessage(){
+
+    },
+    updateStepper(step){
+      this.stepper = step;
+    },
+    handleSendMessage() {
+      this.hiddeRecibirInfo();
     }
+  },
+  mounted() {
+
   },
   validations: {
     name: {

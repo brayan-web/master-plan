@@ -3,7 +3,7 @@
     <sub-header :micrositeUrl="micrositeUrl" />
     <div v-if="locations.length > 0" class="map_filter">
       <div class="maphighlight__box">
-        <map-highlight v-for="(img, index) in imgSet" :key="img.width" :index="index" :img="img"  :existFilter="existFilter" :desarrollo="desarrollo" :url="url"/>
+        <map-highlight v-for="(img, index) in imgSet" :key="img.width" :index="index" :img="img"  :existFilter="existFilter" :desarrollo="desarrollo" :url="url" :nivel="nivel"/>
         <Button v-for="(img, index) in imgSet" :key="img.url" :index="index" :img="img" :id="id" :desarrollo="desarrollo"/>
         <div class="line_horizontal"></div>
         <Availables
@@ -49,6 +49,7 @@ export default {
       id: 55,
       desarrollo: "senderos",
       arrFilteredLocations: [],
+      nivel: "availability",
       url: "senderos/detalles",
       micrositeUrl: "https://www.tresmarias.com.mx/senderos/terrenos",
       imgSet: [
