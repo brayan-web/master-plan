@@ -1,6 +1,6 @@
 <template>
-  <div @click="goToMasterPlan(location.name)">
-    {{location.name}}
+  <div @click="goToMasterPlan(location.url)">
+    {{location.type}}
   </div>
 </template>
 <script>

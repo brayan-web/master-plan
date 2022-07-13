@@ -14,5 +14,11 @@ html{
   position: relative;
   min-height: 100vh;
   background-color: $--background-color;
-  padding-bottom: 1.5rem;
+  //padding-bottom: 1.5rem;
+  padding-bottom: 15rem;
+
+  @include md-device{
+    padding-bottom: 35rem;
+
+  }
 }

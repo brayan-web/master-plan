@@ -7,7 +7,12 @@
   overflow: hidden;
   overflow-x: scroll;
   overflow-y: scroll;
-
+  position: fixed;
+  z-index: 9999999999999999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  border: 1px solid red;
   &-svg {
     width: 300%;
    

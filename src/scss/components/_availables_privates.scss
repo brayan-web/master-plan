@@ -22,9 +22,12 @@
 .availables__privates{
   width: 100%;
   margin: auto;
+
   text-align: left;
   padding: 2rem 0rem 2rem 0rem;
-
+    @include device-medium {
+      text-align: center;
+    }
   &-title{
     font-weight: $--font-weight-700;
     font-size: $--subtitle-font-size-sm;

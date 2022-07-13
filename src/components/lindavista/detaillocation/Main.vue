@@ -7,10 +7,10 @@
     <main class="main__box" :class="columnReverse">
       <div class="item1 item">
         <div :class="showLineHorizontal"  class="line_horizontal-quote"></div>
-        <detail-location/>
+        <detail-location />
         <div :class="hideLineHorizontal" class="line_horizontal"></div>
         <div>
-          <amenities-location/>
+          <amenities-location :amenitiesData="amenitiesData"/>
           <div class="buttons__box">
             <btn-quote v-if="stateForm == 0"  @click="showFormQuote"/>
             <btn-recibir-info v-if="stateForm == 1"  @click="showFormRecibirInfo"/>
@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="item2 item">
-        <form-quote  :stateForm="stateForm" @click="hiddeRecibirInfo"/>
+        <form-quote :desarrollo="desarrollo"  :stateForm="stateForm" @click="hiddeRecibirInfo"/>
       </div>
     </main>
   </div>
@@ -38,7 +38,55 @@ export default {
       //estado 2 es la imagen, 1 el cotizador y 0 recibir info
       stateForm: 1,
       closeIcon: faXmark,
-      deviceWidth: 0
+      deviceWidth: 0,
+      desarrollo: 'Lindavista',
+      amenitiesData: [
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/salon.svg",
+          description: "Salón de Usos Múltiples"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/trotapista.svg",
+          description: "Trotapista"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/ciclopista.svg",
+          description: "Ciclopista"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/gym.svg",
+          description: "Gimnasio"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/nucleobanos.svg",
+          description: "Núcleo de baños"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/administracion.svg",
+          description: "Administración"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/alberca.svg",
+          description: "Alberca y Chapoteadero"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/snack.svg",
+          description: "Snack bar & coffee"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/areasverdes.svg",
+          description: "Áreas verdes"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/Acc_tag_terrenos.svg",
+          description: "Control de acceso por lector de tag"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/pets.svg",
+          description: "Pet Friendly"
+        },
+
+      ]
 
     }
   },

@@ -10,6 +10,7 @@
 @import './components/select';
 @import './components/availables';
 @import './components/availables_privates';
+@import './components/availables_casas';
 @import './components/btn__view_detail';
 @import './components/tooltip';
 @import './components/tooltip_map_main';
@@ -18,6 +19,9 @@
 @import './components/radio_button';
 @import './components/loader';
 @import './components/indicators';
+@import './components/button_back';
+@import './components/modal';
+@import'./components/buttons_navigation';
 
 @import './pages/map_filter';
 @import './pages/polygon';

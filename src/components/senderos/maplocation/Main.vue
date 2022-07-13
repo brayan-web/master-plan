@@ -1,14 +1,18 @@
 <template>
   <div>
+    <div class="line__vertical-mains"></div>
     <sub-header :micrositeUrl="micrositeUrl" />
     <div v-if="locations.length > 0" class="map_filter">
       <div class="maphighlight__box">
+          <h1 class="caption__select">
+                  <span>Seleccione una terreno, clic para ver detalles</span>
+                </h1>
         <map-highlight v-for="(img, index) in imgSet" :key="img.width" :index="index" :img="img"  :existFilter="existFilter" :desarrollo="desarrollo" :url="url" :nivel="nivel"/>
-        <Button v-for="(img, index) in imgSet" :key="img.url" :index="index" :img="img" :id="id" :desarrollo="desarrollo"/>
+        <Button v-for="(img, index) in imgSet" :key="img.url" :index="index" :img="img"/>
         <div class="line_horizontal"></div>
         <Availables
             class="availables-mobile"
-
+            :type="type"
             :amountAvailables="amountAvailables"
         />
       </div>
@@ -21,6 +25,7 @@
         />
         <Availables
             class="availables-desk"
+            :type="type"
             :amountAvailables="amountAvailables"
         />
       </div>
@@ -47,6 +52,8 @@ export default {
   data() {
     return {
       id: 55,
+      levelId: 0,
+      type: "terreno",
       desarrollo: "senderos",
       arrFilteredLocations: [],
       nivel: "availability",
@@ -55,9 +62,15 @@ export default {
       imgSet: [
         {
           name: 'senderos',
-          url: '/imgs/senderos-main.png',
+          url: 'https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/senderos/senderos-main.png',
           width: '750',
-          height: '1307'
+          height: '1307',
+          id: 55,
+          route: 'senderos/detalles',
+          nivel: 'availability',
+          levelId: 0,
+          transform: '',
+          viewBox: '0 0 750 1307'
         }
       ],
       // si no hay filtro volver rangeFilter a false

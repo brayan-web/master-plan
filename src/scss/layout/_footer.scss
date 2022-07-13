@@ -1,9 +1,157 @@
+.footer__bg-custom {
+  width: 100%;
+  padding: 1rem 0px 1rem 0px;
+  background-color: $--primary-color;
+  position: absolute;
+  bottom: 0;
+  color: $--color-white;
+  z-index: 2;
+}
+
 .footer {
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__direccion {
+    width: 45%;
+    @include lg-device {
+      width: 100%;
+      text-align: center;
+    }
+    @include sm-device {
+
+      margin-bottom: 1rem;
+    }
+
+    &-title-main {
+      font-size: 1.4rem;
+      font-weight: $--font-weight-700;
+    }
+
+    &-title-sub {
+      font-size: 1.4rem;
+      font-weight: $--font-weight-400;
+
+    }
+  }
+
+  &__contacto {
+    width: 45%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    @include lg-device {
+      width: 100%;
+      justify-content: space-between;
+    }
+    @include sm-device {
+
+    }
+
+    &-heading {
+      padding: 0rem 3rem 0rem 0rem;
+      @include lg-device {
+        width: 50%;
+        text-align: center;
+        padding: 0rem 0rem 0rem 0rem;
+      }
+
+      &-main {
+        display: block;
+        font-size: 1.4rem;
+        font-weight: $--font-weight-700;
+
+      }
+
+      &-sub {
+        display: block;
+        font-size: 1.4rem;
+        font-weight: $--font-weight-400;
+      }
+    }
+  }
+
+  &__line {
     width: 100%;
-    padding: 1rem 0px 0px 0px;
-    background-color: $--primary-color;
-    position: absolute;
-    bottom: 0;
-    color: $--color-white;
-    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0rem 0rem 0rem;
+
+    &-left {
+      width: 45%;
+      border-bottom: 2px solid $--color-white;
+      @include lg-device {
+        width: 50%
+      }
+    }
+
+    &-right {
+      width: 45%;
+      border-bottom: 2px solid $--color-white;
+      @include lg-device {
+        width: 50%
+      }
+    }
+  }
+
+  &__options {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0rem 0rem 0rem;
+    @include sm-device {
+      padding: 0rem 0rem 0rem 0rem;
+    }
+    @include sm-device {
+
+    }
+
+    &-descargas {
+      width: 45%;
+
+      &--btn {
+        text-decoration: none;
+        color: $--color-white;
+        font-size: 1.2rem;
+        border-bottom: 2px solid $--color-white;
+        @include sm-device {
+          display: inline-block;
+          margin-left: 0;
+          padding: 3rem 0rem 0rem 0rem;
+        }
+      }
+
+      &--txt {
+        color: $--color-white;
+        font-size: 1.2rem;
+        @include sm-device {
+          display: inline-block;
+          margin-left: 0;
+          padding: 3rem 0rem 0rem 0rem;
+
+        }
+      }
+    }
+
+    &-terminos {
+      width: 45%;
+      @include sm-device {
+        text-align: right;
+      }
+    }
+  }
+
+  &__devby {
+    width: 100%;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 1.5rem 0rem 0rem 0rem;
+
+  }
 }

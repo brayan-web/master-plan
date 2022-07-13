@@ -18,11 +18,17 @@
   justify-content:center;
   flex-wrap: wrap;
 
-
   @include md-device {
 
   }
-
+}
+.main__box-imagecenter{
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content:center;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .main-reverse{
   width: 95%;

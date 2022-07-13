@@ -5,7 +5,7 @@
       <p>Ubicacíon: <span>{{selected.name}}</span></p>
       <p>Estatus: <b :class="statusColor">{{selected.statusText}}</b></p>
       <p>Tipo: <span>{{selected.type}}</span></p>
-      <p>M²: <span>{{selected.m2t}}</span></p>
+      <p>M² de terreno: <span>{{selected.m2t}}</span></p>
       <p>Precio: <span>${{formatValue(selected.value)}}</span></p>
     </div>
 

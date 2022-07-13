@@ -1,11 +1,11 @@
 .tippy-tooltip.toolMapMain-theme {
   background-color: $--background-color;
-  border: 3px solid #224266;
-  color: #224266;
+  border: 5px solid $--primary-color;
+  color: #000;
   margin:auto;
   padding: .7rem .8rem .7rem .8rem;
   border-radius: .4rem;
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
   font-weight: $--font-weight-600;
   width: 150px;
@@ -15,37 +15,10 @@
 .tippy-popper[x-placement^='top']
 .tippy-tooltip.toolMapMain-theme
 .tippy-arrow {
-  border-top: 7px solid #224266;
+  border-top: 7px solid $--primary-color;
 }
 .tippy-popper[x-placement^='top']
 .tippy-tooltip.toolMapMain-theme
-.tippy-arrow::after {
-
-}
-
-.tippy-tooltip.lindavista-theme {
-  border: 3px solid #224266;
-  color: #224266;
-
-  &:hover{
-    background-color: #224266;
-    color: #ffff;
-    border: 3px solid #fff;
-
-  }
-}
-
-.tippy-tooltip.senderos-theme {
-  border: 3px solid #355b50;
-  color: #355b50;
-}
-
-
-
-.tippy-popper[x-placement^='top']
-.tippy-tooltip.senderos-theme
-.tippy-arrow::after, .tippy-popper[x-placement^='top']
-.tippy-tooltip.lindavista-theme
 .tippy-arrow::after {
   content: '';
   position: absolute;
@@ -53,8 +26,34 @@
   left: -6px;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
+  border-top: 6px solid $--background-color;
+}
+
+.tippy-popper[x-placement^='left']
+.tippy-tooltip.toolMapMain-theme
+.tippy-arrow {
+  border-left: 7px solid $--primary-color;
+}
+.tippy-popper[x-placement^='left']
+.tippy-tooltip.toolMapMain-theme
+.tippy-arrow::after {
+
+  border-left: 6px solid $--background-color;
+  border-right: 6px solid transparent;
   border-top: 6px solid transparent;
+}
 
+.tippy-popper[x-placement^='right']
+.tippy-tooltip.toolMapMain-theme
+.tippy-arrow {
+  border-right: 7px solid $--primary-color;
+}
+.tippy-popper[x-placement^='right']
+.tippy-tooltip.toolMapMain-theme
+.tippy-arrow::after {
+  border-left: 6px solid transparent;
+  border-right: 6px solid $--background-color;
+  border-top: 6px solid transparent;
 }
 
 
@@ -62,15 +61,7 @@
 
 
 
-.tippy-tooltip.senderos-theme, .tippy-tooltip.lindavista-theme {
-  background-color: $--background-color;
-  margin:auto;
-  padding: .7rem .8rem .7rem .8rem;
-  border-radius: .4rem;
-  font-size: 1.7rem;
-  text-transform: uppercase;
-  font-weight: $--font-weight-600;
-  width: 150px;
-  font-family: "Raleway", sans-serif;
-  cursor: pointer;
-}
+
+
+
+

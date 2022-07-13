@@ -9,9 +9,14 @@
 
 .line_horizontal{
     width: 95%;
+    display: none;
     margin: auto;
     height: 1px;
     background-color: $--black-color;
+    @include device-medium {
+            display: block;
+
+    }
 }
 .line_horizontal-quote{
     width: 95%;
@@ -27,6 +32,17 @@
     position: absolute;
     top: 0;
     left: 50%;
+    @include device-medium {
+        display: none;
+    }
+}
+.line__vertical-mains{
+    width: 1px;
+    height: 100%;
+    background-color: $--black-color;
+    position: absolute;
+    top: 0;
+    left: 68%;
     @include device-medium {
         display: none;
     }
@@ -52,4 +68,13 @@
     .u__dipslay--block{
         display:block;
     }
+}
+
+.u__center-flex{
+    display: flex;
+    justify-content: center;
+}
+
+.u__margin-left{
+    margin-left: 1.5rem;
 }

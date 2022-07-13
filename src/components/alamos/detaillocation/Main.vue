@@ -10,19 +10,19 @@
         <detail-location/>
         <div :class="hideLineHorizontal" class="line_horizontal"></div>
         <div v-if="stateForm == 2">
-          <amenities-location/>
+          <amenities-location :amenitiesData="amenitiesData"/>
           <div class="buttons__box">
             <btn-quote @click="showFormQuote"/>
             <btn-recibir-info  @click="showFormRecibirInfo"/>
           </div>
         </div>
         <div v-else>
-          <image-location class="image__location-small"  />
+          <image-location class="image__location-small"  :typeImage="typeImage"/>
         </div>
       </div>
       <div class="item2 item">
-        <image-location v-if="stateForm == 2"/>
-        <form-quote  v-else :stateForm="stateForm" @click="hiddeRecibirInfo"/>
+        <image-location v-if="stateForm == 2" :typeImage="typeImage"/>
+        <form-quote :desarrollo="desarrollo"  v-else :stateForm="stateForm" @click="hiddeRecibirInfo"/>
       </div>
     </main>
   </div>
@@ -43,7 +43,63 @@ export default {
       //estado 2 es la imagen, 1 el cotizador y 0 recibir info
       stateForm: 2,
       closeIcon: faXmark,
-      deviceWidth: 0
+      deviceWidth: 0,
+      typeImage: "terreno",
+      desarrollo: "Alamos",
+      amenitiesData: [
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/salon.svg",
+          description: "Salón de Usos Múltiples"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/gym.svg",
+          description: "Gimnasio"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/alberca.svg",
+          description: "Alberca recreativa"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/kidspool.svg",
+          description: "Pool Kids"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/snack.svg",
+          description: "Snack bar & coffee"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/terraza.svg",
+          description: "Terraza social"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/nucleobanos.svg",
+          description: "Núcleo de baños"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/juegosinfantiles.svg",
+          description: "Juegos infantiles"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/areasverdes.svg",
+          description: "Áreas verdes"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/administracion.svg",
+          description: "Administración"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/circuitocerrado.svg",
+          description: "Circuito Cerrado las 24 horas del día"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/caseta.svg",
+          description: "Caseta de Control de acceso a través de Tag de Seguridad"
+        },
+        {
+          icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/pets.svg",
+          description: "Pet Friendly"
+        },
+      ]
 
     }
   },

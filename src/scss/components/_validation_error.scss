@@ -16,6 +16,8 @@
   position: absolute;
   right:2rem;
   top: 1.2rem;
+  width: auto;
+
   font-size: 1.5rem;
   color: $--error-color;
   transition: all 0.25s ease;
@@ -23,6 +25,7 @@
 .icon__success-input{
   position: absolute;
   right:2rem;
+  width: auto;
   top: 1.2rem;
   font-size: 1.5rem;
   color: $--primary-color;

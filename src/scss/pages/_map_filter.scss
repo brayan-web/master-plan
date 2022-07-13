@@ -12,7 +12,7 @@
 
 .maphighlight__box{ 
     flex: 70%;
-    border-right: 1px solid $--black-color;
+    //border-right: 1px solid $--black-color;
     @include device-medium {
     border-right: none; 
     width: 100%;      
@@ -34,6 +34,54 @@
     margin: auto;
     svg{
         width: 100%;
+    }
+}
+
+.box__svg-deptos{
+    width: 50%;
+    margin: auto;
+    @include lg-device {
+        width: 90%;
+        margin: auto;
+    }
+    svg{
+        width: 100%;
+    }
+}
+
+.box__svg-pdp{
+    width: 50%;
+    margin: auto;
+    @include lg-device {
+        width: 90%;
+        margin: auto;
+    }
+    svg{
+        width: 100%;
+    }
+}
+.box__svg-bosques{
+    width: 65%;
+    margin: auto;
+    @include lg-device {
+        width: 90%;
+        margin: auto;
+    }
+    svg{
+        width: 100%;
+    }
+}
+
+.caption__select{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    span{
+        font-size: 1.6rem;
+        font-weight: 600;
     }
 }
 

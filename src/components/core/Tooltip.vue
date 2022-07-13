@@ -28,7 +28,7 @@ export default {
       } else {
         if(this.location.status == 3){
           return 'reservado';
-        } else if(this.location.status == 4){
+        } else if(this.location.status == 4  ){
           return 'bloqueado';
         }
       }
@@ -40,7 +40,6 @@ export default {
           return 'vendido';
         }else{
           return 'reservado';
-
         }
       }else{
         return 'disponible';

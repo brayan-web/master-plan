@@ -8,15 +8,15 @@
       xmlns:xlink="http://www.w3.org/1999/xlink"
       x="0px"
       y="0px"
-      :viewBox="`0 0 ${width} ${height}`"
+      :viewBox="dataImg.viewBox"
       xml:space="preserve"
     >
       <image
         style="overflow: visible"
-        :width="`${width}`"
-        :height="`${height}`"
-        :xlink:href="`${url}`"
-        :transform="_transform"
+        :width="dataImg.width"
+        :height="dataImg.height"
+        :xlink:href="dataImg.url"
+        :transform="dataImg.transform"
 
       ></image>
       <polygon
@@ -67,16 +67,12 @@ export default {
       upIcon: faArrowUp,
       leftIcon: faArrowLeft,
       rightIcon: faArrowRight,
-      existFilter: [],
-      id: this.$route.params.id,
-      imgSet: [],
-      width: this.$route.params.width,
-      height: this.$route.params.height,
-      desarrollo: this.$route.params.desarrollo,
+      id: "",
+      levelId : "",
+      nivel: "",
       url: "",
       opacity: 0.4,
       stroke: 3,
-      transform: false
     };
   },
   components: {
@@ -85,19 +81,13 @@ export default {
   computed: {
     ...mapGetters({
       locations: "getLocations",
+      dataImg: "getStatusDataImageMap",
     }),
     development() {
-      return { id: this.id, level: 0 };
-    },
-    _transform(){
-      if(this.transform){
-        return 'matrix(1 0 0 1 238 -0.42)'
-      }else{
-        return ''
-      }
+      return { id: this.id, level: this.levelId };
     },
     filterMapAvaialbles(){
-      if(this.desarrollo === 'canadas_casas'){
+      if(this.nivel === 'towerStageLevel' || this.nivel === 'towerStage'){
         return this.locations.filter((location) => location.available > 0)
       }else{
         return this.locations;
@@ -105,33 +95,80 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["getAvailableLocations", "getTowerStageLevels", "selectedLocation"]),
+    ...mapActions(["getAvailableLocations", "getTowerStageLevels","getTowerStage", "selectedLocation", "getMapDetail"]),
     selectLocation(location) {
-      if (location.status == 2 || location.available > 0) {
-        this.selectedLocation(location);
-        this.$router.push(`/${this.desarrollo}/${location.name}`);
+      if(this.nivel === 'availability'){
+        this.selectAvailability(location)
+      }else if(this.nivel === 'towerStageLevel'){
+        this.selectTowerStageLevel(location)
+      }else if(this.nivel === 'towerStage'){
+        this.selectTowerStage(location)
+      }
+    },
+    selectAvailability(location){
+      if (location.statusText === "Disponible") {
+        this.selectedLocation(location)
+        this.$router.push(`${this.url}/${location.name}`)
+      } else {
+          event.preventDefault();
+      }
+    },
+    selectTowerStageLevel(location){
+      if (location.available > 0) {
+        this.selectedLocation(location)
+        let nameNoSpace = location.name.replace(/ /g, "");
+        this.$router.push({ path: `/${this.url}/nombre_nivel_te=${nameNoSpace}/cve_nivel_te=${location.id}`, params: {privada: nameNoSpace, id: location.id}})
+        this.getMapDetail()
+
+      } else {
+          event.preventDefault();
+      }
+    },
+    selectTowerStage(location) {
+      if (location.available > 0) {
+        this.selectedLocation(location)
+        let nameNoSpace = location.name.replace(/ /g, "");
+        this.$router.push({
+          path: `/${this.url}/nombre_torre_etapa=${nameNoSpace}/cve_torre_etapa=${location.id}`,
+          params: {torre: nameNoSpace, id: location.id}
+        })
+        this.getMapDetail()
+
       } else {
         event.preventDefault();
       }
     },
     back() {
-      this.$router.go(-1);
+      this.getMapDetail()
     },
     customPolygon(index) {
       let location = this.filterMapAvaialbles[index];
       return `stroke-width:3; stroke:#${location.color}; opacity: ${this.opacity}; fill: #${location.color}`;
     },
+
+   async onLevelServer(){
+      let nivel = this.nivel;
+      switch (nivel) {
+        case 'availability':
+          await this.getAvailableLocations(this.development);
+        break;
+        case 'towerStageLevel':
+          await  this.getTowerStageLevels(this.development);
+        break;
+        case 'towerStage':
+          await  this.getTowerStage(this.development);
+      }
+    }
+
+
   },
   async created() {
-    if(this.desarrollo === "canadas_casas"){
-      await  this.getTowerStageLevels(this.development);
-      this.transform = true;
-    }else{
-      await this.getAvailableLocations(this.development);
-    }
-    this.url = this.$route.params.url;
-    this.width = this.$route.params.width;
-    this.height = this.$route.params.height;
+    this.id = this.dataImg.id;
+    this.url = this.dataImg.route;
+    this.nivel = this.dataImg.nivel;
+    this.levelId = this.dataImg.levelId;
+
+    this.onLevelServer()
   },
   mounted() {},
 };

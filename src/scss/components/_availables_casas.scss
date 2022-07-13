@@ -1,0 +1,84 @@
+.availables__casas-box {
+  margin: auto;
+  width: 85%;
+}
+.availables__casas-title{
+  width: 100%;
+  margin: auto;
+  text-align: left;
+  padding: 2rem 0rem 2rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .count{
+    color: $--color-white;
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    font-size: 1.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: $--font-weight-bold;
+    @include lg-device {
+      width: 3rem;
+      height: 3rem;
+      line-height: 3rem;
+    }
+    @include sm-device{
+      font-size: 1.7rem;
+    }
+  }
+  .text{
+    margin-left: .9rem;
+    h2{
+      font-weight: $--font-weight-600;
+      font-size: $--subtitle-font-size-ex-sm;
+      @include lg-device {
+        font-size: 1.4rem;
+      }
+      @include sm-device{
+        font-size: 1.4rem;
+
+      }
+    }
+  }
+}
+.availables__casas-buttons{
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 0rem 1.5rem 0rem;
+  margin: auto;
+  min-width: 120px;
+  &-text{
+    margin-left: .9rem;
+    font-size: 1.5rem;
+
+  }
+
+  &-btn{
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid rgba(21, 37,65, .8);
+    transition: all .2s ease-out;
+    border-radius: 50%;
+    cursor: pointer;
+      &:hover{
+        border: 5px solid $--primary-color;
+      }
+  }
+}
+.count__unavailable{
+  background-color: $--vendido-color;
+}
+.count__available{
+  background-color: $--disponible-color;
+}
+.active__btn-casas{
+  background-color: $--primary-color
+}
+.desactive__btn-casas{
+  background-color: $--background-color;
+}

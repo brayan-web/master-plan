@@ -72,12 +72,12 @@ export default {
                                          <table cellspacing="0" cellpadding="0" class="force-full-width">
                                          <tr>
                                             <td style="border-bottom:1px solid #e3e3e3; font-weight: bold; text-align:left">
-                                             Ciudad
+                                             Codigo Postal
                                              </td>
                                         </tr>
                                          <tr>
                                             <td style="text-align:left;">
-                                                 ${fdata.ciudad}
+                                                 ${fdata.codigoPostal}
                                              </td>
                                          </tr>
                                     </table>

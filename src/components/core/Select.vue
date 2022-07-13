@@ -6,8 +6,6 @@
     <select
       v-model="range"
       @change="changeRange"
-
-
     >
       <option value="" selected>Seleccione una opcion</option>
       <option value="all">TODOS</option>

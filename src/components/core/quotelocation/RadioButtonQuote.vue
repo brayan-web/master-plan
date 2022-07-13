@@ -11,7 +11,7 @@
 <script>
   export default {
     name: "RadioButtonQuote",
-    props:["text", "interes", "content", "activePlan", "value"],
+      props:["text", "interes", "content", "activePlan", "value"],
     computed: {
       fillActive() {
         if(this.activePlan === this.value){

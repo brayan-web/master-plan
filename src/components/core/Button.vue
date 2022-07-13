@@ -5,23 +5,26 @@
 </template>
 
 <script>
-
+import  { mapActions, mapGetters } from "vuex"
 export default {
     name: "Button",
     data() {
         return {
         }
     },
-    props: ["id", "img", "desarrollo"],
+    props: ["img"],
+  computed: {
+      ...mapGetters({
+      })
+  },
     methods: {
-        openMap(){   
-            let idDev = this.id;
-
-
-            this.$router.push({ name: 'detalle', params: {desarrollo: this.desarrollo, id: idDev, url: this.img.url, width:this.img.width, height: this.img.height } })
-        
+      ...mapActions(["getDataImageMap", "getMapDetail"]),
+        openMap(){
+          this.getMapDetail();
+          this.getDataImageMap(this.img);
         },
         mounted() {
+
         },
     },
 }

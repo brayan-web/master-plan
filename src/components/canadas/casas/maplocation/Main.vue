@@ -1,15 +1,20 @@
 <template>
   <div>
+    <div class="line__vertical-mains"></div>
     <sub-header :micrositeUrl="micrositeUrl" />
     <div v-if="locations.length > 0" class="map_filter">
       <div class="maphighlight__box">
+          <h1 class="caption__select">
+                  <span>Seleccione una privada, clic para ver detalles</span>
+                </h1>
         <map-highlight v-for="(img, index) in imgSet" :key="img.width" :index="index" :img="img"  :existFilter="existFilter" :desarrollo="desarrollo" :url="url" :nivel="nivel" :indicators="indicators"/>
-        <Button v-for="(img, index) in imgSet" :key="img.url" :index="index" :img="img" :id="id" :desarrollo="desarrollo"/>
+        <Button v-for="(img, index) in imgSet" :key="img.url" :index="index" :img="img"/>
         <div class="line_horizontal"></div>
         <Availables
             class="availables-mobile"
-            :type="type"
             :amountAvailables="amountAvailables"
+            :nivel="nivel"
+
         />
       </div>
       <div class="select__box" :class="selectHide">
@@ -22,7 +27,7 @@
         <Availables
             class="availables-desk"
             :amountAvailables="amountAvailables"
-            :type="type"
+            :nivel="nivel"
         />
       </div>
     </div>
@@ -48,26 +53,31 @@ export default {
   data() {
     return {
       id: 51,
-      type: "casas",
-      nivel: "towerStage",
+      nivel: "towerStageLevel",
+      levelId: 0,
       desarrollo: "canadas_casas",
       arrFilteredLocations: [],
-      url: "canadas_casas/",
-      micrositeUrl: "https://www.tresmarias.com.mx/lindavista/terrenos",
+      url: "canadas_casas",
+      micrositeUrl: "https://www.tresmarias.com.mx/canadas/casas",
       imgSet: [
         {
           name: 'canadas_casas',
-          url: '/imgs/canadas/casas/MainCasasCanadas.png',
+          url: 'https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/ca%C3%B1adas/casas/MainCasasCanadas.png',
           width: '1200',
           height: '1959',
-          transform: true
+          id: 51,
+          levelId: 0,
+          route: 'canadas_casas',
+          nivel: 'towerStageLevel',
+          transform: 'matrix(1 0 0 1 238 -0.42)',
+          viewBox: '0 0 1726 1959'
         }
       ],
       indicators: [
-        {id: 233, text: 'PRIVADA 16', transform: 'matrix(1 0 0 1 426.1255 1319.479)',cxB: 656, cyB: 1304, rB: 20, cxW: 656.5, cyW: 1304.5, rW: 9.5, x1: 673, y1: 1305, x2: 828, y2: 1307,  status: true },
-        {id: 178, text: 'PRIVADA 20', transform: 'matrix(1 0 0 1 79.1255 882.479)', cxB: 302, cyB: 871, rB: 20, cxW: 302.5, cyW: 871.5, rW: 9.5, x1: 319, y1: 871, x2: 457, y2: 873, status: true },
-        {id: 233, text: 'PRIVADA 17', transform: 'matrix(1 0 0 1 368.1255 1470.479)',cxB: 593, cyB: 1460, rB: 20, cxW: 592.5, cyW: 1460.5, rW: 9.5, x1: 610, y1: 1460, x2: 765, y2: 1462, status: true },
-        {id: 233, text: 'PRIVADA 21', transform: 'matrix(1 0 0 1 40.1255 1025.479)', cxB: 265, cyB: 1013, rB: 20, cxW: 265.5, cyW: 1013.5, rW: 9.5, x1: 280, y1: 1012, x2: 418, y2: 1014, status: true },
+        {id: 233, text: 'PRIVADA 16', transform: 'matrix(1 0 0 1 510.1255 1319.479)',cxB: 656, cyB: 1304, rB: 20, cxW: 656.5, cyW: 1304.5, rW: 9.5, x1: 673, y1: 1305, x2: 828, y2: 1307,  status: true },
+        {id: 178, text: 'PRIVADA 20', transform: 'matrix(1 0 0 1 155.1255 882.479)', cxB: 302, cyB: 871, rB: 20, cxW: 302.5, cyW: 871.5, rW: 9.5, x1: 319, y1: 871, x2: 457, y2: 873, status: true },
+        {id: 233, text: 'PRIVADA 17', transform: 'matrix(1 0 0 1 448.1255 1470.479)',cxB: 593, cyB: 1460, rB: 20, cxW: 592.5, cyW: 1460.5, rW: 9.5, x1: 610, y1: 1460, x2: 765, y2: 1462, status: true },
+        {id: 233, text: 'PRIVADA 21', transform: 'matrix(1 0 0 1 125.1255 1025.479)', cxB: 265, cyB: 1013, rB: 20, cxW: 265.5, cyW: 1013.5, rW: 9.5, x1: 280, y1: 1012, x2: 418, y2: 1014, status: true },
       ],
       // si no hay filtro volver rangeFilter a false
       rangeFilter: false
@@ -81,13 +91,6 @@ export default {
     development() {
       return { id: this.id, level: 0 };
     },
-    amountAvailablesUnique() {
-      const filteredAvailables = this.existFilter;
-      const newArrfiltered = filteredAvailables.filter(
-          (item) => item.status == 2
-      );
-      return newArrfiltered;
-    },
     existFilter() {
       let arrExistFilter;
       if (this.rangeFilter) {
@@ -97,21 +100,12 @@ export default {
       }
       return arrExistFilter;
     },
-    amountAvailablesPrivates(){
+    amountAvailables(){
       const filteredAvailables = this.existFilter;
       const newArrfiltered = filteredAvailables.filter(
           (item) => item.available > 0
       );
       return newArrfiltered;
-    },
-    amountAvailables(){
-      let amount_uniques = this.amountAvailablesUnique;
-      let amount_privates = this.amountAvailablesPrivates;
-      if(this.type === "casas"){
-        return amount_privates
-      }else{
-        return  amount_uniques
-      }
     },
     selectHide(){
       if(this.rangeFilter == false){

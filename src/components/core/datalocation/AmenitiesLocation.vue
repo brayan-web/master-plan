@@ -19,21 +19,10 @@
 <script>
 export default {
       name: "AmenitiesLocation",
+  props: ["amenitiesData"],
       data(){
         return{
-          amenitiesData:[
-            {icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/salon.svg", description: "Salón de Usos Múltiples"},
-            {icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/ciclopista.svg", description: "Ciclopista"},
-            {icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/nucleobanos.svg", description: "Núcleo de baños"},
-            {icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/alberca.svg", description: "Alberca y Chapoteadero"},
-            {icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/areasverdes.svg", description: "Áreas verdes"},
-            {icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/pets.svg", description: "Pet Friendly"},
-            {icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/trotapista.svg", description: "Trotapista"},
-            {icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/gym.svg", description: "Gimnasio"},
-            {icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/administracion.svg", description: "Administración"},
-            {icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/snack.svg", description: "Snack bar & coffee"},
-            {icon: "https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/icons/Acc_tag_terrenos.svg", description: "Control de acceso por lector de tag"},
-          ]
+
         }
       }
 }
