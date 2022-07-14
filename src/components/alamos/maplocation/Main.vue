@@ -7,7 +7,7 @@
           <h1 class="caption__select">
                   <span>Seleccione una terreno, clic para ver detalles</span>
                 </h1>
-        <map-highlight v-for="(img, index) in imgSet" :key="img.width" :index="index" :img="img"  :existFilter="existFilter" :desarrollo="desarrollo" :url="url" :nivel="nivel"/>
+        <map-highlight v-for="(img, index) in imgSet" :key="img.width" :index="index" :img="img"  :existFilter="existFilter" :desarrollo="desarrollo" :url="url" :nivel="nivel" :type="type"/>
         <Button v-for="(img, index) in imgSet" :key="img.url" :index="index" :img="img" :id="id" :desarrollo="desarrollo" :nivel="nivel"  :levelId="levelId"/>
         <div class="line_horizontal"></div>
         <Availables

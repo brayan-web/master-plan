@@ -18,7 +18,7 @@
         
               />
               </svg>
-            <tippy  theme="toolMapMain"  multiple="true" arrow="true" :placement="`${location.position}`"  interactive="true" animation="fade" allowHTML="true" v-for="(location, index) in locations" :key="index" :to="`${location.name}`">
+            <tippy  theme="toolMapMain" trigger="mouseenter"  multiple="true" arrow="true" :placement="`${location.position}`"  interactive="true" animation="fade" allowHTML="true" v-for="(location, index) in locations" :key="index" :to="`${location.name}`">
                 <tooltip-map-main :location="location" />
             </tippy>
             <!-- <div class="btn__navigation-home btn__navigation-home-up">

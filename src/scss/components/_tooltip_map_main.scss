@@ -1,59 +1,68 @@
 .tippy-tooltip.toolMapMain-theme {
   background-color: $--background-color;
-  border: 5px solid $--primary-color;
+  border: 3px solid $--primary-color;
   color: #000;
   margin:auto;
   padding: .7rem .8rem .7rem .8rem;
   border-radius: .4rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   font-weight: $--font-weight-600;
-  width: 130px;
+  width: 100px;
   font-family: "Raleway", sans-serif;
   cursor: pointer;
 }
-.tippy-popper[x-placement^='top']
-.tippy-tooltip.toolMapMain-theme
-.tippy-arrow {
-  border-top: 0px solid $--primary-color;
-}
-.tippy-popper[x-placement^='top']
-.tippy-tooltip.toolMapMain-theme
-.tippy-arrow::after {
-  content: '';
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  border-left: 0px solid transparent;
-  border-right: 0px solid transparent;
-  border-top: 0px solid  transparent;
+
+// .tippy-popper[x-placement^='top'] 
+// .tippy-tooltip.toolMapMain-theme 
+// .tippy-arrow {
+//     border-top: 7px solid $--primary-color;
+// }
+// .tippy-popper[x-placement^='top'] 
+// .tippy-tooltip.toolMapMain-theme 
+// .tippy-arrow::after {
+//     content: '';
+//     position: absolute;
+//     top: -8px;
+//     left: -6px;
+//     border-left: 6px solid transparent;
+//     border-right: 6px solid transparent;
+//     border-top: 6px solid $--background-color;
+// }
+
+.tippy-popper[x-placement^=top] .tippy-arrow {
+  border-top: 7px solid $--primary-color;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  bottom: -7px;
+  margin: 0 3px;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
 }
 
-.tippy-popper[x-placement^='left']
-.tippy-tooltip.toolMapMain-theme
-.tippy-arrow {
-  border-left: 0px solid transparent;
-}
-.tippy-popper[x-placement^='left']
-.tippy-tooltip.toolMapMain-theme
-.tippy-arrow::after {
 
-  border-left: 0px solid transparent;
-  border-right: 0px solid transparent;
-  border-top: 0px solid transparent;
+
+
+
+
+.tippy-popper[x-placement^=left] .tippy-arrow {
+  border-left: 7px solid $--primary-color;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  right: -7px;
+  margin: 3px 0;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
 }
 
-.tippy-popper[x-placement^='right']
-.tippy-tooltip.toolMapMain-theme
-.tippy-arrow {
-  border-right: 0px solid transparent;
-}
-.tippy-popper[x-placement^='right']
-.tippy-tooltip.toolMapMain-theme
-.tippy-arrow::after {
-  border-left: 0px solid transparent;
-  border-right: 0px solid transparent;
-  border-top: 0px solid transparent;
+.tippy-popper[x-placement^=right] .tippy-arrow {
+  border-right: 7px solid $--primary-color;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  left: -7px;
+  margin: 3px 0;
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
 }
 
 

@@ -1,7 +1,7 @@
 <template>
   <div class="tool">
     <div class="tool__header">
-      <h1 class="tool__header--title">terreno</h1>
+      <h1 class="tool__header--title">{{type}}</h1>
     </div>
     <div class="tool__content">
       <p>UBICACIÓN: <b>{{location.name}}</b></p>
@@ -20,7 +20,7 @@
 
 export default {
     name: "Tooltip",
-    props:["location"],
+    props:["location", "type"],
   computed:{
     statusColor(){
       if(this.location.status == 1 || (this.location.status == 2)){

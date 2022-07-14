@@ -7,7 +7,7 @@
                 <h1 class="caption__select">
                     <span>Seleccione una privada, clic para ver detalles</span>
                 </h1>
-                <map-highlight v-for="(img, index) in imgSet" :key="img.width" :index="index" :img="img" :existFilter="existFilter" :desarrollo="desarrollo" :url="url" :nivel="nivel" :indicators="indicators" />
+                <map-highlight v-for="(img, index) in imgSet" :key="img.width" :index="index" :img="img" :existFilter="existFilter" :desarrollo="desarrollo" :url="url" :nivel="nivel" :indicators="indicators" :type="type"/>
                 <Button v-for="(img, index) in imgSet" :key="img.url" :index="index" :img="img" :id="id" :nivel="nivel" :desarrollo="desarrollo" :levelId="levelId" :url="url" />
                 <div class="line_horizontal"></div>
                 <Availables class="availables-mobile" :amountAvailables="amountAvailables" :nivel="nivel" />
@@ -41,6 +41,7 @@ export default {
             id: 29,
             nivel: "towerStageLevel",
             levelId: 0,
+            type: "terreno",
             desarrollo: "canadas_terrenos",
             arrFilteredLocations: [],
             url: "canadas_terrenos",

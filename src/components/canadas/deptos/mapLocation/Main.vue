@@ -8,7 +8,7 @@
           <h1 class="caption__select">
                   <span>Seleccione una torre, clic para ver detalles</span>
                 </h1>
-        <map-highlight v-for="(img, index) in imgSet" :key="img.width" :index="index" :img="img"  :existFilter="existFilter" :desarrollo="desarrollo" :url="url" :nivel="nivel" :indicators="indicators"/>
+        <map-highlight v-for="(img, index) in imgSet" :key="img.width" :index="index" :img="img"  :existFilter="existFilter" :desarrollo="desarrollo" :url="url" :nivel="nivel" :indicators="indicators" :type="type"/>
         <Button v-for="(img, index) in imgSet" :key="img.url" :index="index" :img="img" :id="id" :nivel="nivel"  :desarrollo="desarrollo" :levelId="levelId" :url="url"/>
         <div class="line_horizontal"></div>
         <Availables
@@ -56,6 +56,7 @@ export default {
       id: 35,
       nivel: "towerStage",
       levelId: 0,
+      type: "departamentos",
       desarrollo: "canadas_deptos",
       arrFilteredLocations: [],
       url: "canadas_deptos",

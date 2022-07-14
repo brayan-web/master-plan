@@ -5,7 +5,7 @@
     <sub-header :micrositeUrl="micrositeUrl" />
     <div v-if="locations.length > 0" class="map_filter">
       <div class="maphighlight__box">
-        <map-highlight v-for="(img, index) in imgSet" :key="img.width" :index="index" :img="img"  :existFilter="existFilter" :desarrollo="desarrollo" :url="url" :nivel="nivel" :indicators="indicators"/>
+        <map-highlight v-for="(img, index) in imgSet" :key="img.width" :index="index" :img="img"  :existFilter="existFilter" :desarrollo="desarrollo" :url="url" :nivel="nivel" :indicators="indicators" :type="type"/>
         <Button v-for="(img, index) in imgSet" :key="img.url" :index="index" :img="img" :id="id" :nivel="nivel"  :desarrollo="desarrollo" :levelId="levelId" :url="url"/>
         <div class="line_horizontal"></div>
         <Availables
@@ -53,6 +53,7 @@ export default {
       id: 49,
       nivel: "towerStage",
       levelId: 0,
+      type: "departamento",
       desarrollo: "torrespaseodelparque",
       arrFilteredLocations: [],
       url: "torrespaseodelparque",

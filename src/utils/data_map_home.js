@@ -120,7 +120,7 @@ export const locationsData = [
     {
         "name": "bosques",
         "url": "bosques",
-        "type": "Terrenos",
+        "type": "Casas",
         "position": "top",
         "shape": "poly",
         "coords" :"1416,1420,1415,1478,1460,1478,1460,1420"

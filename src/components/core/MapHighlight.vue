@@ -29,7 +29,7 @@
                         :filterMapAvaialbles="filterMapAvaialbles"/>
         </svg>
             <tippy theme="honeybee" size="large" distance="3" ignoreAttributes="true" arrow="true" interactive="true" animation="fade" allowHTML="true" v-for="location in filterMapAvaialbles" :key="location.id" :to="`${location.name}`">
-                <Tooltip :location="location" />
+                <Tooltip :location="location" :type="type"/>
             </tippy>
         </div>
         <map-view-detail v-if="stateMapDetail" />
