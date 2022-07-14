@@ -1,37 +1,51 @@
-.svg__box{
-  overflow-y: scroll;
-  overflow-x: auto;
+.svg__custom-boxmain{
   width: 100%;
   height: 100vh;
-  padding:0;
-  margin: 0;
-  position: fixed;
-  z-index: 1;
-
+  overflow-y: scroll;
+ display: block;
+ position: fixed;
+ background: $--primary-color;
+ top: 0;
+ left: 0;
+  line-height: normal;
+  @include lg-device{
+    
+    
+  }
 }
-.polygon__map-main{
+
+.svg__box {
+  // border: 1px solid red;
+  width: 100%;
+
+
+  @include lg-device{
+
+    
+  }
+}
+.polygon__map-main {
   fill: transparent;
   cursor: pointer;
   outline: none;
 }
-@include lg-device{
-  svg{
-  width: 180%;
-
+@include lg-device {
+  svg {
+    width: 180%;
   }
 }
-@include sm-device{
-  svg{
+@include sm-device {
+  svg {
     width: 250%;
   }
 }
-@include extra-sm-device{
-  svg{
+@include extra-sm-device {
+  svg {
     width: 300%;
   }
 }
-@include very-sm-device{
-  svg{
+@include very-sm-device {
+  svg {
     width: 380%;
   }
 }

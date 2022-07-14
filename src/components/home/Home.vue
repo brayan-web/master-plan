@@ -1,8 +1,9 @@
 <template>
-    <div>
+    <div class="svg__custom-boxmain">
         <Header :logoUrl="logoUrl" />
-        <div class="svg__box">
-            <svg  version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1893 1921" xml:space="preserve">
+        <div style="width:100%;">
+         <div class="svg__box">
+             <svg  version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1893 1921" xml:space="preserve">
                 <image
                     width="100%"
                     height="1921"
@@ -17,10 +18,10 @@
         
               />
               </svg>
-            <tippy theme="toolMapMain" size="large" multiple="true" :placement="`${location.position}`" arrow="true" interactive="true" animation="fade" allowHTML="true" v-for="(location, index) in locations" :key="index" :to="`${location.name}`">
+            <tippy  theme="toolMapMain"  multiple="true" arrow="true" :placement="`${location.position}`"  interactive="true" animation="fade" allowHTML="true" v-for="(location, index) in locations" :key="index" :to="`${location.name}`">
                 <tooltip-map-main :location="location" />
             </tippy>
-            <div class="btn__navigation-home btn__navigation-home-up">
+            <!-- <div class="btn__navigation-home btn__navigation-home-up">
                 <font-awesome-icon :icon="upIcon" />
             </div>
             <div class="btn__navigation-home btn__navigation-home-down">
@@ -31,8 +32,11 @@
             </div>
             <div class="btn__navigation-home btn__navigation-home-right">
                 <font-awesome-icon :icon="rightIcon" />
-            </div>
+            </div> -->
+           </div>
         </div>
+       
+       
     
     </div>
 </template>
@@ -78,4 +82,9 @@ export default {
     }
 }
 </script>
+
+<style lang="css" scoped>
+
+    
+</style>
 

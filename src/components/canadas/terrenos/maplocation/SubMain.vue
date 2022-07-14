@@ -79,7 +79,7 @@ export default {
                 { min: 112, max: 232.87 },
             ],
             rangeFilterPriv22: [
-                { min: 106.05, max: 118 },
+                { min: 106.05, max: 128 },
                 { min: 140.02, max: 166.64 },
             ]
         };

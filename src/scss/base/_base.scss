@@ -13,12 +13,41 @@ html{
   box-sizing: border-box;
   position: relative;
   min-height: 100vh;
+
   background-color: $--background-color;
   //padding-bottom: 1.5rem;
   padding-bottom: 15rem;
-
+  @include device-large{
+    padding-bottom: 20rem;
+  }
   @include md-device{
     padding-bottom: 35rem;
+  }
+  @include lg-device{
+    padding-bottom: 25rem;
+  }
+  @include sm-device{
+    padding-bottom: 30rem;
+  }
+  @include very-sm-device{
+    padding-bottom: 40rem;
+  }
+}
 
+::-webkit-scrollbar{
+  width: 1rem;
+  height: 1rem;
+}
+::-webkit-scrollbar-track{
+  border-radius: 1rem;
+  background: $--background-color;
+ 
+}
+::-webkit-scrollbar-thumb{
+  background: rgba(21, 37, 65, .9);
+  border-radius: 1rem;
+
+  &:hover{
+    background: $--primary-color;
   }
 }

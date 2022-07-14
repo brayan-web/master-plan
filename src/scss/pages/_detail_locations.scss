@@ -1,5 +1,11 @@
 .detail__location--box{
-    width:100%;
+  width: 90%;
+  margin: auto;
+
+  @include sm-device{
+    width: 95%;
+    margin: auto;
+  }
 
 }
 .detail__title{

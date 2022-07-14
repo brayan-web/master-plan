@@ -5,55 +5,55 @@
   margin:auto;
   padding: .7rem .8rem .7rem .8rem;
   border-radius: .4rem;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: $--font-weight-600;
-  width: 150px;
+  width: 130px;
   font-family: "Raleway", sans-serif;
   cursor: pointer;
 }
 .tippy-popper[x-placement^='top']
 .tippy-tooltip.toolMapMain-theme
 .tippy-arrow {
-  border-top: 7px solid $--primary-color;
+  border-top: 0px solid $--primary-color;
 }
 .tippy-popper[x-placement^='top']
 .tippy-tooltip.toolMapMain-theme
 .tippy-arrow::after {
   content: '';
   position: absolute;
-  top: -8px;
-  left: -6px;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid $--background-color;
+  top: 0px;
+  left: 0px;
+  border-left: 0px solid transparent;
+  border-right: 0px solid transparent;
+  border-top: 0px solid  transparent;
 }
 
 .tippy-popper[x-placement^='left']
 .tippy-tooltip.toolMapMain-theme
 .tippy-arrow {
-  border-left: 7px solid $--primary-color;
+  border-left: 0px solid transparent;
 }
 .tippy-popper[x-placement^='left']
 .tippy-tooltip.toolMapMain-theme
 .tippy-arrow::after {
 
-  border-left: 6px solid $--background-color;
-  border-right: 6px solid transparent;
-  border-top: 6px solid transparent;
+  border-left: 0px solid transparent;
+  border-right: 0px solid transparent;
+  border-top: 0px solid transparent;
 }
 
 .tippy-popper[x-placement^='right']
 .tippy-tooltip.toolMapMain-theme
 .tippy-arrow {
-  border-right: 7px solid $--primary-color;
+  border-right: 0px solid transparent;
 }
 .tippy-popper[x-placement^='right']
 .tippy-tooltip.toolMapMain-theme
 .tippy-arrow::after {
-  border-left: 6px solid transparent;
-  border-right: 6px solid $--background-color;
-  border-top: 6px solid transparent;
+  border-left: 0px solid transparent;
+  border-right: 0px solid transparent;
+  border-top: 0px solid transparent;
 }
 
 
