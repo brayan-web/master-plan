@@ -16,7 +16,7 @@ html{
 
   background-color: $--background-color;
   //padding-bottom: 1.5rem;
-  padding-bottom: 15rem;
+  padding-bottom: 18rem;
   @include device-large{
     padding-bottom: 20rem;
   }
@@ -27,7 +27,7 @@ html{
     padding-bottom: 25rem;
   }
   @include sm-device{
-    padding-bottom: 30rem;
+    padding-bottom: 35rem;
   }
   @include very-sm-device{
     padding-bottom: 40rem;

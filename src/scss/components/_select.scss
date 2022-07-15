@@ -60,14 +60,14 @@
 .select__container .arrow{
     position: absolute;
     right: 20px;
-    top: calc(50% + 15px);
+    top: calc(50% + .8rem);
     width: 25px;
     height: 25px;
     display: block;
     color: $--primary-color;
     transition: all 0.25s ease;
     @include extra-sm-device {
-        top: calc(50% + 15px);
+        top: calc(50% + .1rem);
         right: 13px;
     }
 }

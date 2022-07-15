@@ -12,7 +12,9 @@
 
 .maphighlight__box{ 
     flex: 70%;
-    //border-right: 1px solid $--black-color;
+    svg{
+        width: 100%;
+    }
     @include device-medium {
     border-right: none; 
     width: 100%;      

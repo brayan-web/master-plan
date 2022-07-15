@@ -1,7 +1,7 @@
 <template>
   <div>
     <sub-header :micrositeUrl="micrositeUrl"/>
-    <div style="width: 100%;">
+    <div class="box__svg">
       <div style="width: 80%; margin: auto;">
           <h1 class="caption__select">
                   <span>Seleccione una sección, clic para ver detalles</span>
@@ -11,8 +11,7 @@
             id="Capa_1"
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            x="0px"
-            y="0px"
+          
             viewBox="0 0 6053 4562"
             style="enable-background: new 0 0 1200 750"
             xml:space="preserve"

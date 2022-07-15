@@ -4,7 +4,7 @@
     <button-back/>
     <div v-if="locations.length > 0" class="map_filter">
       <div class="maphighlight__box">
-       <div style="width: 90%; margin: auto">
+       <div class="box__svg">
           <h1 class="caption__select">
                   <span>Seleccione una sección, clic para ver detalles</span>
                 </h1>

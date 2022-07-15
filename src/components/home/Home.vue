@@ -21,18 +21,7 @@
             <tippy  theme="toolMapMain" trigger="mouseenter"  multiple="true" arrow="true" :placement="`${location.position}`"  interactive="true" animation="fade" allowHTML="true" v-for="(location, index) in locations" :key="index" :to="`${location.name}`">
                 <tooltip-map-main :location="location" />
             </tippy>
-            <!-- <div class="btn__navigation-home btn__navigation-home-up">
-                <font-awesome-icon :icon="upIcon" />
-            </div>
-            <div class="btn__navigation-home btn__navigation-home-down">
-                <font-awesome-icon :icon="downIcon" />
-            </div>
-            <div class="btn__navigation-home btn__navigation-home-left">
-                <font-awesome-icon :icon="leftIcon" />
-            </div>
-            <div class="btn__navigation-home btn__navigation-home-right">
-                <font-awesome-icon :icon="rightIcon" />
-            </div> -->
+        
            </div>
         </div>
        

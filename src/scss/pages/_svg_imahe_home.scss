@@ -20,7 +20,8 @@
 .svg__box {
   // border: 1px solid red;
   width: 100%;
-
+  overflow: hidden;
+  overflow-x: scroll;
 
   @include lg-device{
 

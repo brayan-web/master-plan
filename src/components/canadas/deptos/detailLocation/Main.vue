@@ -7,7 +7,7 @@
     <main class="main__box" :class="columnReverse">
       <div class="item1 item">
         <div :class="showLineHorizontal"  class="line_horizontal-quote"></div>
-        <detail-location/>
+        <detail-location :typeImage="typeImage"/>
         <div :class="hideLineHorizontal" class="line_horizontal"></div>
         <div v-if="stateForm == 2">
           <amenities-location :amenitiesData="amenitiesData"/>

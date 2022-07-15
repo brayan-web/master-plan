@@ -1,5 +1,5 @@
 .amenities__location--box{
-  width: 90%;
+  width: 95%;
   margin: auto;
   @include sm-device{
     width: 95%;
@@ -26,7 +26,7 @@
 }
 .amenities__content{
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: .5rem;
   grid-template-columns: auto auto;
 
 
@@ -45,8 +45,8 @@
 
 .customSpan {
   margin:0 0 0px 4px;
-  font-size: 1.3rem;
-
+  font-size: 1.4rem;
+  line-height: 1.6rem;
   @include extra-sm-device {
     font-size: 1.2rem;
   }

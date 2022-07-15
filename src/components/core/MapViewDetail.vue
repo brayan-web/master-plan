@@ -33,10 +33,10 @@
     <div @click="back()" class="btn__navigation btn__navigation--close">
       <font-awesome-icon :icon="closeIcon" />
     </div>
-    <div class="btn__navigation btn____navigation--up">
+    <div class="btn__navigation btn__navigation--up">
       <font-awesome-icon :icon="upIcon" />
     </div>
-    <div class="btn__navigation btn____navigation--down">
+    <div class="btn__navigation btn__navigation--down">
       <font-awesome-icon :icon="downIcon" />
     </div>
     <div class="btn__navigation btn__navigation--left">

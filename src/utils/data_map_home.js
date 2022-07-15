@@ -124,6 +124,14 @@ export const locationsData = [
         "position": "top",
         "shape": "poly",
         "coords" :"1416,1420,1415,1478,1460,1478,1460,1420"
+    },
+    {
+        "name": "vistahermosa",
+        "url": "https://torrevistahermosamorelia.com/",
+        "type": "sitio web",
+        "position": "top",
+        "shape": "poly",
+        "coords": "499,329.6 496,355.3 499,381 565,381 565,327.8"
     }
 
 ]

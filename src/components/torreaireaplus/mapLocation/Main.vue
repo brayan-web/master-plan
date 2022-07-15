@@ -64,7 +64,7 @@ export default {
           url: 'https://kiritek-web-documents.s3.us-west-2.amazonaws.com/masterplan-dashboard/imgs/torreaireaplus/MainTorreairea.png',
           width: '1050',
           height: '388',
-          id: 35,
+          id: 48,
           levelId: 0,
           route: 'torreaireaplus',
           nivel: 'towerStage',

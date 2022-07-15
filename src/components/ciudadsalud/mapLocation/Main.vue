@@ -1,7 +1,7 @@
 <template>
   <div>
     <sub-header :micrositeUrl="micrositeUrl"/>
-    <div style="width: 100%;">
+    <div class="box__svg">
       <div style="width: 80%; margin: auto;">
           <h1 class="caption__select">
                   <span>Seleccione una zona, clic para ver detalles</span>
