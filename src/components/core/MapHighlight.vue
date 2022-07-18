@@ -1,35 +1,35 @@
 <template>
     <div>
         <div :class="widthSvg">
-            
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" :viewBox="img.viewBox" xml:space="preserve">
-          <image
-              style="overflow: visible"
-              :width="img.width"
-              :height="img.height"
-              :xlink:href="`${img.url}`"
-              :transform="img.transform"
-          >
     
-          </image>
-            <polygon
-                class="polygon"
-                v-on:mouseover="inLocation(location, index)"
-                v-on:mouseout="outLocation(location, index)"
-                @click="selectLocation(location)"
-                v-for="(location, index) in filterMapAvaialbles"
-                :key="location.name"
-                :points="location.coords"
-                :shape="location.shape"
-                :style="customPolygon(index)"
-                :stroke="location.color"
-                :name="`${location.name}`"
-            />
-            <indicators v-for="indicator in setIndicators" :indicator="indicator" :key="'A' + indicator.text"
-                        :filterMapAvaialbles="filterMapAvaialbles"/>
-        </svg>
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" :viewBox="img.viewBox" xml:space="preserve">
+              <image
+                  style="overflow: visible"
+                  :width="img.width"
+                  :height="img.height"
+                  :xlink:href="`${img.url}`"
+                  :transform="img.transform"
+              >
+        
+              </image>
+                <polygon
+                    class="polygon"
+                    v-on:mouseover="inLocation(location, index)"
+                    v-on:mouseout="outLocation(location, index)"
+                    @click="selectLocation(location)"
+                    v-for="(location, index) in filterMapAvaialbles"
+                    :key="location.name"
+                    :points="location.coords"
+                    :shape="location.shape"
+                    :style="customPolygon(index)"
+                    :stroke="location.color"
+                    :name="`${location.name}`"
+                />
+                <indicators v-for="indicator in setIndicators" :indicator="indicator" :key="'A' + indicator.text"
+                            :filterMapAvaialbles="filterMapAvaialbles"/>
+            </svg>
             <tippy theme="honeybee" size="large" distance="3" ignoreAttributes="true" arrow="true" interactive="true" animation="fade" allowHTML="true" v-for="location in filterMapAvaialbles" :key="location.id" :to="`${location.name}`">
-                <Tooltip :location="location" :type="type"/>
+                <Tooltip :location="location" :type="type" />
             </tippy>
         </div>
         <map-view-detail v-if="stateMapDetail" />
@@ -133,7 +133,7 @@ export default {
         inLocation(location, index) {
             this.name = location.name
             event.target.style.opacity = 0.3;
-            event.target.style.fill = "#bfe479";
+            event.target.style.fill = "#"+location.color;
             if (this.nivel === 'towerStageLevel' || this.nivel === 'towerStage') {
                 if (location.name === this.setIndicators[index].text) {
                     this.setIndicators[index].status = this.offIndicator

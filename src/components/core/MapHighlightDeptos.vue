@@ -123,7 +123,7 @@ export default {
     inLocation(location) {
       this.name = location.name
       event.target.style.opacity = 0.3;
-      event.target.style.fill = "#bfe479";
+      event.target.style.fill = "#"+location.color;
     },
     outLocation(location, index) {
       this.name = "";
