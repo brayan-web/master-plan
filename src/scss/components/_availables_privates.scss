@@ -1,11 +1,10 @@
 .availables__privates-box{
   margin:auto;
   width: 85%;
-
   @include device-medium {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
   @include lg-device {
     width: 100%;
@@ -13,20 +12,25 @@
 
   }
   @include md-device {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
     text-align: center;
+    justify-content: space-evenly;
   }
 }
 .availables__privates{
   width: 100%;
   margin: auto;
-
-  text-align: left;
+  text-align: center;
   padding: 2rem 0rem 2rem 0rem;
     @include device-medium {
       text-align: center;
+      width: 33%;
+      margin: 0;
+    }
+    @include sm-device{
+      width: 50%;
+    }
+    @include very-sm-device{
+      width: 100%;
     }
   &-title{
     font-weight: $--font-weight-700;
@@ -43,8 +47,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-start;
-    margin-left: 1.3rem;
+    justify-content: center;
     @include lg-device {
       margin-left: 0rem;
       justify-content: center;
