@@ -1,7 +1,7 @@
 <template>
     <div>
         <button @click="$refs.pdf.print()">print</button>
-       
+        <iframe src="/files/7eb5c325-2437-4df3-83b9-23a5de766ebb.pdf" frameborder="0"></iframe>
         <h1>File</h1>
         <vue-pdf-embed ref="pdf" :source="src" />
     </div>
