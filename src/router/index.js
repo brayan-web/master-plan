@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from "../components/home/Home"
+// import Home from "../components/home/Home"
+import Home from "../components/PDF"
 //CANADAS CASAS ROUTES
 import CanadasCasas from '../components/canadas/casas/CanadasCasas';
 import MenuCanadasCasas from '../components/canadas/casas/Menu';
