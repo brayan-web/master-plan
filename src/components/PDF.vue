@@ -8,8 +8,8 @@
         <div style="width: 50%">
             <pdf v-if="show" ref="pdf" style="border: 1px solid red" :src="src" :page="page" :rotate="rotate" @progress="loadedRatio = $event" @num-pages="numPages = $event" @link-clicked="page = $event"></pdf>
         </div>
-
-          <div style="width: 50%">
+    
+        <div style="width: 50%">
             <pdf v-if="show" ref="pdfTest" style="border: 1px solid red" :src="srcTest" :page="page" :rotate="rotate" @progress="loadedRatio = $event" @num-pages="numPages = $event" @link-clicked="page = $event"></pdf>
         </div>
     </div>
@@ -25,13 +25,22 @@ export default {
     data() {
         return {
             show: true,
-            src: '/files/7eb5c325-2437-4df3-83b9-23a5de766ebb.pdf',
+            src: '',
             srcTest: 'https://cdn.jsdelivr.net/gh/mozilla/pdf.js@c6e8ca86/test/pdfs/annotation-link-text-popup.pdf',
             loadedRatio: 0,
             page: 1,
             numPages: 0,
             rotate: 0,
         }
+    },
+    mounted() {
+        let that = this,
+            url = `http://localhost:8081/${'/files/7eb5c325-2437-4df3-83b9-23a5de766ebb.pdf'}`;
+        that.src = pdf.createLoadingTask(url); 
+        console.log(url)
+        // that.src.promise.then(pdf => {
+        //   that.numPages = pdf.numPages;
+        // });
     },
     methods: {
         // password: function(updatePassword) {
@@ -48,7 +57,7 @@ export default {
 
 
         },
-         imprimirTest() {
+        imprimirTest() {
 
             setTimeout(this.$refs.pdfTest.print(), 1000);
 
