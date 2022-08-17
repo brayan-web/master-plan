@@ -9,15 +9,15 @@
             <pdf v-if="show" ref="pdf" style="border: 1px solid red" :src="src" :page="page" :rotate="rotate" @progress="loadedRatio = $event" @num-pages="numPages = $event" @link-clicked="page = $event"></pdf>
         </div>
     
-        <div style="width: 50%">
+        <!-- <div style="width: 50%">
             <pdf v-if="show" ref="pdfTest" style="border: 1px solid red" :src="srcTest" :page="page" :rotate="rotate" @progress="loadedRatio = $event" @num-pages="numPages = $event" @link-clicked="page = $event"></pdf>
-        </div>
+        </div> -->
     </div>
 </template>
 
 <script>
 import pdf from 'vue-pdf'
-
+var publicTask = pdf.createLoadingTask('/files/7eb5c325-2437-4df3-83b9-23a5de766ebb.pdf')
 export default {
     components: {
         pdf: pdf
@@ -25,7 +25,7 @@ export default {
     data() {
         return {
             show: true,
-            src: '/files/7eb5c325-2437-4df3-83b9-23a5de766ebb.pdf',
+            src: publicTask,
             srcTest: 'https://cdn.jsdelivr.net/gh/mozilla/pdf.js@c6e8ca86/test/pdfs/annotation-link-text-popup.pdf',
             loadedRatio: 0,
             page: 1,
