@@ -35,7 +35,7 @@ export default {
     },
     mounted() {
         let that = this,
-            url = `http://localhost:8081/${'/files/7eb5c325-2437-4df3-83b9-23a5de766ebb.pdf'}`;
+            url = `http://localhost:8081${'/files/7eb5c325-2437-4df3-83b9-23a5de766ebb.pdf'}`;
         that.src = pdf.createLoadingTask(url); 
         console.log(url)
         // that.src.promise.then(pdf => {
