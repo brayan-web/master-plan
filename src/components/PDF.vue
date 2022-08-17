@@ -25,7 +25,7 @@ export default {
     data() {
         return {
             show: true,
-            src: '/files/7eb5c325-2437-4df3-83b9-23a5de766ebb',
+            src: '/files/7eb5c325-2437-4df3-83b9-23a5de766ebb.pdf',
             srcTest: 'https://cdn.jsdelivr.net/gh/mozilla/pdf.js@c6e8ca86/test/pdfs/annotation-link-text-popup.pdf',
             loadedRatio: 0,
             page: 1,
