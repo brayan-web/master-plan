@@ -1,9 +1,12 @@
 <template>
     <div>
         <button @click="$refs.pdf.print()">print</button>
+        <button @click="$refs.pdfE.print()">print Example</button>
+        <iframe src="/files/7eb5c325-2437-4df3-83b9-23a5de766ebb.pdf" frameborder="0"></iframe>
         <iframe src="/files/7eb5c325-2437-4df3-83b9-23a5de766ebb.pdf" frameborder="0"></iframe>
         <h1>File</h1>
         <vue-pdf-embed ref="pdf" :source="src" />
+        <vue-pdf-embed ref="pdfE" :source="srcExample" />
     </div>
 </template>
 
@@ -24,6 +27,7 @@ export default {
 
             // ],
             src: '/files/7eb5c325-2437-4df3-83b9-23a5de766ebb.pdf',
+            srcExample: '/files/pdfexample.pdf',
             // loadedRatio: 0,
             // page: 1,
             // numPages: 0,
