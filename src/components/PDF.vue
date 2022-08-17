@@ -1,11 +1,16 @@
 
 <template>
     <div>
- 
+    
         <!-- <button class="btn btn-success" @click="printWindow()">Print</button> -->
         <button class="btn btn-primary mt-5" @click="imprimir()">IMPRIMIR PDF</button>
+        <button class="btn btn-primary mt-5" @click="imprimirTest()">IMPRIMIR TEST</button>
         <div style="width: 50%">
-            <pdf v-if="show" ref="pdf" style="border: 1px solid red" :src="src" :page="page" :rotate="rotate"   @num-pages="numPages = $event" ></pdf>
+            <pdf v-if="show" ref="pdf" style="border: 1px solid red" :src="src" :page="page" :rotate="rotate" @progress="loadedRatio = $event" @num-pages="numPages = $event" @link-clicked="page = $event"></pdf>
+        </div>
+
+          <div style="width: 50%">
+            <pdf v-if="show" ref="pdfTest" style="border: 1px solid red" :src="srcTest" :page="page" :rotate="rotate" @progress="loadedRatio = $event" @num-pages="numPages = $event" @link-clicked="page = $event"></pdf>
         </div>
     </div>
 </template>
@@ -21,9 +26,10 @@ export default {
         return {
             show: true,
             src: '/files/7eb5c325-2437-4df3-83b9-23a5de766ebb',
+            srcTest: 'https://cdn.jsdelivr.net/gh/mozilla/pdf.js@c6e8ca86/test/pdfs/annotation-link-text-popup.pdf',
             loadedRatio: 0,
             page: 1,
-            numPages: 1,
+            numPages: 0,
             rotate: 0,
         }
     },
@@ -37,12 +43,16 @@ export default {
         //     console.log(err);
         // },
         imprimir() {
-  
-          
-            
-                setTimeout(this.$refs.pdf.print(), 1000);
 
-            
+            setTimeout(this.$refs.pdf.print(), 1000);
+
+
+        },
+         imprimirTest() {
+
+            setTimeout(this.$refs.pdfTest.print(), 1000);
+
+
         },
         // isMobile() {
         //     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -52,7 +62,7 @@ export default {
         //     }
         // },
         printWindow: function() {
-           setTimeout(window.print(), 1000)
+            setTimeout(window.print(), 1000)
         }
     }
 }
