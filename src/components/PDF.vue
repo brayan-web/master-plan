@@ -15,7 +15,7 @@ export default {
    },
     data() {
         return {
-            show: true,
+            show: false,
 			page: 1,
 			numPages: null,
             src: '7eb5c325-2437-4df3-83b9-23a5de766ebb.pdf',
