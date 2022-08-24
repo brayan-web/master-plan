@@ -27,6 +27,12 @@ Vue.use(CoolLightBox);
 Vue.use(Vuelidate);
 Vue.component("tippy", TippyComponent);
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+
+import VueHtmlToPaper from 'vue-html-to-paper';
+Vue.use(VueHtmlToPaper);
+Vue.use(VueHtmlToPaper);
+
 new Vue({
   router,
   store,

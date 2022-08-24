@@ -1,38 +1,43 @@
 <template>
     <div>
-        <button @click="Print" class="btn btn-primary">Imprimir</button>
-        <pdf v-if="show" ref="pdf" src="/7eb5c325-2437-4df3-83b9-23a5de766ebb.pdf" :page="page" :rotate="rotate"    @num-pages="numPages = $event" @link-clicked="page = $event"></pdf>
+		<div style="width: 50%">
+			<pdf v-show="show" ref="pdf" style="border: 1px solid red" :src="src" :page="page"  ></pdf>
+		</div>
+       <button class="btn btn-success" @click="$refs.pdf.print()">print</button>
     </div>
 </template>
 
 <script>
 import pdf from 'vue-pdf'
-// import printJS from 'print-js'
 export default {
-    components: {
-        pdf
-    },
+   components: {
+    pdf: pdf
+   },
     data() {
         return {
-            src: '',
             show: true,
-            urlPdf: "../assets/img/core/7eb5c325-2437-4df3-83b9-23a5de766ebb.pdf",
-            page: 1,
-            numPages: 0,
-            rotate: 0,
-            url: "https://cdn.jsdelivr.net/gh/mozilla/pdf.js@c6e8ca86/test/pdfs/annotation-link-text-popup.pdf"
+			page: 1,
+			numPages: null,
+            src: '7eb5c325-2437-4df3-83b9-23a5de766ebb.pdf',
+          
         }
     },
     computed:{
        
     },
     mounted() {
-
+               
     },
     methods: {
-            Print(){
-                this.$refs.pdf.print()
-            }
+           printMe(){
+             var wspFrame = this.$refs.myiframe.contentWindow.document
+            wspFrame.focus();
+            wspFrame.print();
+          }
     }
 }
 </script>
+
+<style lang="">
+    
+</style>
